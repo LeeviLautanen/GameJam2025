@@ -1,6 +1,55 @@
-[gd_scene load_steps=2 format=3 uid="uid://csqs2as7lydw1"]
+[gd_scene load_steps=7 format=3 uid="uid://csqs2as7lydw1"]
 
-[ext_resource type="Script" path="res://scripts/NewScript.cs" id="1_tjuit"]
+[ext_resource type="Script" path="res://scripts/Norppa.cs" id="1_4p3kq"]
+[ext_resource type="Texture2D" uid="uid://b6m2qtnbvyqn8" path="res://assets/seal.png" id="2_0qqcl"]
+[ext_resource type="Script" path="res://scripts/TestPlayer.cs" id="3_53jnw"]
+[ext_resource type="Texture2D" uid="uid://cvkn6cccxvd84" path="res://icon.svg" id="3_vnby6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xwb3"]
+size = Vector2(51, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qest6"]
+size = Vector2(30, 30)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_tjuit")
+
+[node name="Norppa" type="CharacterBody2D" parent="."]
+script = ExtResource("1_4p3kq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Norppa"]
+position = Vector2(5.5, 0)
+shape = SubResource("RectangleShape2D_8xwb3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Norppa"]
+scale = Vector2(0.248227, 0.212766)
+texture = ExtResource("2_0qqcl")
+
+[node name="Camera2D" type="Camera2D" parent="Norppa"]
+zoom = Vector2(2.015, 2.015)
+
+[node name="VisionArea" type="Area2D" parent="Norppa"]
+position = Vector2(-3, -33)
+
+[node name="VisionCollider" type="CollisionPolygon2D" parent="Norppa/VisionArea"]
+position = Vector2(36, 33)
+scale = Vector2(0.698864, 0.514881)
+polygon = PackedVector2Array(0, 0, 128, 52.439, 128, -40.786)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(122, -94)
+script = ExtResource("3_53jnw")
+
+[node name="Icon" type="Sprite2D" parent="Player"]
+position = Vector2(1, 2)
+scale = Vector2(0.25, 0.248047)
+texture = ExtResource("3_vnby6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qest6")
+
+[node name="Icon" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(-39, -22)
+scale = Vector2(5.25125, 5.33012)
+texture = ExtResource("3_vnby6")
