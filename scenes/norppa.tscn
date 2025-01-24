@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://yag2ltgcneb4"]
+[gd_scene load_steps=6 format=3 uid="uid://csqs2as7lydw1"]
 
 [ext_resource type="Script" path="res://scripts/Norppa.cs" id="1_4p3kq"]
 [ext_resource type="Texture2D" uid="uid://b6m2qtnbvyqn8" path="res://assets/seal.png" id="2_0qqcl"]
@@ -31,9 +31,9 @@ zoom = Vector2(2.015, 2.015)
 position = Vector2(-3, -33)
 
 [node name="VisionCollider" type="CollisionPolygon2D" parent="Norppa/VisionArea"]
-position = Vector2(32, 32)
-scale = Vector2(0.696241, 0.874947)
-polygon = PackedVector2Array(0, 0, 125, 45, 125, -45)
+position = Vector2(32, 34)
+scale = Vector2(0.698864, 0.514881)
+polygon = PackedVector2Array(0, 0, 128, 52.439, 128, -40.786)
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(8, -106)
