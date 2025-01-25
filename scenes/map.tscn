@@ -11,18 +11,18 @@
 [ext_resource type="Texture2D" uid="uid://c0ofceurxk7oy" path="res://Pics/mapPictures/oksa.png" id="8_fef6v"]
 [ext_resource type="PackedScene" uid="uid://chlp523k67as0" path="res://scenes/norppa.tscn" id="8_oaim8"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ri6g3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1dmr3"]
 texture = ExtResource("1_c4ghn")
 texture_region_size = Vector2i(50, 50)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nognk"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kb617"]
 texture = ExtResource("2_3ubft")
 texture_region_size = Vector2i(50, 50)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wku7l"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lu675"]
 texture = ExtResource("4_e0ww0")
 texture_region_size = Vector2i(50, 50)
 0:0/0 = 0
@@ -32,7 +32,7 @@ texture_region_size = Vector2i(50, 50)
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, 7.07107, -1.06066, 7.77818, 6.36396, 0, 17.6777, 0.353554, 25, 7.42462, 25, 12.0208, 21.2132, 20.1525, 14.8492, 25, 5.65686, 25, 1.06066, 15.5563, -25, 13.7886)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g5c2d"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vugye"]
 texture = ExtResource("4_iwlax")
 texture_region_size = Vector2i(50, 50)
 0:0/0 = 0
@@ -42,7 +42,7 @@ texture_region_size = Vector2i(50, 50)
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, 6.01041, -2.82843, 7.77818, 8.48528, -0.707108, 20.1525, 2.82843, 25, 13.0815, 17.6777, 21.9203, 4.94975, 25, -0.35355, 15.2028, -25, 13.435)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2iunj"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s3ja6"]
 texture = ExtResource("5_auljj")
 texture_region_size = Vector2i(50, 50)
 0:0/0 = 0
@@ -50,7 +50,7 @@ texture_region_size = Vector2i(50, 50)
 2:0/0 = 0
 3:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_656sp"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e5uod"]
 texture = ExtResource("6_wuen1")
 texture_region_size = Vector2i(50, 50)
 0:0/0 = 0
@@ -70,7 +70,7 @@ texture_region_size = Vector2i(50, 50)
 3:1/0 = 0
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, 21.9203, -4.94975, 10.6066, 25, -19.0919, 25, -25, -25, -25)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_avikh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b0jd6"]
 texture = ExtResource("7_ytt6v")
 texture_region_size = Vector2i(50, 50)
 0:0/0 = 0
@@ -78,7 +78,7 @@ texture_region_size = Vector2i(50, 50)
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 2.5, -17.5, 20.1525, -5.65686, 17.5, 3.5, 25, 9.5, 25, 16, 15, 20, 6, 20, -2, 15.5, -11, 21, -25, 25)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ppskx"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kaut2"]
 texture = ExtResource("8_fef6v")
 texture_region_size = Vector2i(50, 50)
 0:0/0 = 0
@@ -87,16 +87,16 @@ texture_region_size = Vector2i(50, 50)
 [sub_resource type="TileSet" id="TileSet_e6vit"]
 tile_size = Vector2i(50, 50)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_ri6g3")
-sources/1 = SubResource("TileSetAtlasSource_nognk")
-sources/2 = SubResource("TileSetAtlasSource_wku7l")
-sources/3 = SubResource("TileSetAtlasSource_g5c2d")
-sources/4 = SubResource("TileSetAtlasSource_2iunj")
-sources/5 = SubResource("TileSetAtlasSource_656sp")
-sources/6 = SubResource("TileSetAtlasSource_avikh")
-sources/7 = SubResource("TileSetAtlasSource_ppskx")
+sources/0 = SubResource("TileSetAtlasSource_1dmr3")
+sources/1 = SubResource("TileSetAtlasSource_kb617")
+sources/2 = SubResource("TileSetAtlasSource_lu675")
+sources/3 = SubResource("TileSetAtlasSource_vugye")
+sources/4 = SubResource("TileSetAtlasSource_s3ja6")
+sources/5 = SubResource("TileSetAtlasSource_e5uod")
+sources/6 = SubResource("TileSetAtlasSource_b0jd6")
+sources/7 = SubResource("TileSetAtlasSource_kaut2")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8oyu"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j801l"]
 bg_color = Color(0.975229, 0, 0.0134395, 1)
 border_width_left = 1
 border_width_top = 1
@@ -104,7 +104,7 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7eiv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_um5ng"]
 bg_color = Color(0.336054, 0.643192, 0.782503, 1)
 border_width_left = 1
 border_width_top = 1
@@ -186,19 +186,23 @@ rotation = -2.90011
 position = Vector2(2588, 2132)
 rotation = -2.85723
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-offset_left = 20.0
-offset_top = 8.0
-offset_right = 218.0
-offset_bottom = 35.0
-theme_override_styles/background = SubResource("StyleBoxFlat_o8oyu")
-theme_override_styles/fill = SubResource("StyleBoxFlat_n7eiv")
+[node name="AirBar" type="ProgressBar" parent="UI"]
+offset_left = 14.0
+offset_top = 13.0
+offset_right = 212.0
+offset_bottom = 40.0
+theme_override_styles/background = SubResource("StyleBoxFlat_j801l")
+theme_override_styles/fill = SubResource("StyleBoxFlat_um5ng")
 max_value = 10.0
 value = 10.0
 show_percentage = false
-metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="Timer" parent="CanvasLayer/ProgressBar"]
+[node name="CooldownLabel" type="Label" parent="UI"]
+offset_left = 16.0
+offset_top = 43.0
+offset_right = 193.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 20
+text = "Boost cooldown: 0"
