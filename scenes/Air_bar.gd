@@ -29,7 +29,7 @@ func _on_subs_button_pressed() -> void:
 	if air <= 0:
 		print("You got an electric shock")
 		timer.stop()
-		#game over, redirect to start scene
+		_game_over()
 
 
 #replace the button with airbubble object
@@ -39,3 +39,7 @@ func _on_add_button_pressed() -> void:
 	air_bar.value = air
 	if air > 10:
 		air = MAX_AIR
+
+func _game_over() -> void:
+	# When the game is over, change the scene to the "Start" scene (replace with your scene name)
+	get_tree().change_scene("res://path/to/start_scene.tscn")

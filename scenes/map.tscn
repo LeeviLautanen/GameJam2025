@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://b7rphhc0vi7u2"]
+[gd_scene load_steps=22 format=4 uid="uid://b7rphhc0vi7u2"]
 
 [ext_resource type="Texture2D" uid="uid://ev8ouadghnd0" path="res://Pics/mapPictures/water_tile.png" id="1_c4ghn"]
 [ext_resource type="Texture2D" uid="uid://du3wnp36d70yl" path="res://Pics/mapPictures/grass_tile.png" id="2_3ubft"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bokmssajs5av3" path="res://Pics/mapPictures/potkulauta_pun.png" id="4_e0ww0"]
 [ext_resource type="Texture2D" uid="uid://bpu8w6nq6r8h5" path="res://Pics/mapPictures/potkulauta_sin.png" id="4_iwlax"]
 [ext_resource type="Texture2D" uid="uid://deuibmq74qlds" path="res://Pics/mapPictures/virtaukset.png" id="5_auljj"]
-[ext_resource type="Script" path="res://scenes/Air_bar.gd" id="5_jloqg"]
 [ext_resource type="Texture2D" uid="uid://d00jp3ksohslt" path="res://Pics/mapPictures/vene.png" id="6_wuen1"]
 [ext_resource type="Texture2D" uid="uid://dr0jii5kqpc34" path="res://Pics/mapPictures/kivi.png" id="7_ytt6v"]
 [ext_resource type="Texture2D" uid="uid://c0ofceurxk7oy" path="res://Pics/mapPictures/oksa.png" id="8_fef6v"]
@@ -160,22 +159,6 @@ tile_set = SubResource("TileSet_e6vit")
 [node name="Player" parent="." instance=ExtResource("3_k2ugu")]
 position = Vector2(73, 521)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-offset_left = 20.0
-offset_top = 8.0
-offset_right = 218.0
-offset_bottom = 35.0
-theme_override_styles/background = SubResource("StyleBoxFlat_o8oyu")
-theme_override_styles/fill = SubResource("StyleBoxFlat_n7eiv")
-max_value = 10.0
-value = 10.0
-show_percentage = false
-script = ExtResource("5_jloqg")
-
-[node name="Timer" type="Timer" parent="CanvasLayer/ProgressBar"]
-
 [node name="Norppa" parent="." instance=ExtResource("8_oaim8")]
 position = Vector2(1222, 366)
 rotation = -4.62225
@@ -203,4 +186,19 @@ rotation = -2.90011
 position = Vector2(2588, 2132)
 rotation = -2.85723
 
-[connection signal="timeout" from="CanvasLayer/ProgressBar/Timer" to="CanvasLayer/ProgressBar" method="_on_timer_timeout"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 20.0
+offset_top = 8.0
+offset_right = 218.0
+offset_bottom = 35.0
+theme_override_styles/background = SubResource("StyleBoxFlat_o8oyu")
+theme_override_styles/fill = SubResource("StyleBoxFlat_n7eiv")
+max_value = 10.0
+value = 10.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="CanvasLayer/ProgressBar"]

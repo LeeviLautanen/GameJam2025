@@ -10,6 +10,8 @@ public partial class Norppa : CharacterBody2D
 	private CharacterBody2D target;
 	private Random random = new Random();
 	private bool wallHit = false;
+	private Timer attackCooldownTimer;
+	private bool canAttack = true;
 
 	public override void _Ready()
 	{
@@ -21,7 +23,11 @@ public partial class Norppa : CharacterBody2D
 		visionArea.BodyEntered += OnBodyEntered;
 		visionArea.BodyExited += OnBodyExited;
 
-
+		attackCooldownTimer = new Timer();
+		AddChild(attackCooldownTimer);
+		attackCooldownTimer.OneShot = true;
+		attackCooldownTimer.WaitTime = 0.5f;
+		attackCooldownTimer.Connect("timeout", new Callable(this, "OnAttackCooldown"));
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -43,6 +49,11 @@ public partial class Norppa : CharacterBody2D
 		MoveAndSlide();
 	}
 
+	private void OnAttackCooldown()
+	{
+		canAttack = true;
+	}
+
 	private void MoveTowardsTarget(CharacterBody2D target)
 	{
 		Vector2 direction = (target.GlobalPosition - GlobalPosition).Normalized();
@@ -51,7 +62,18 @@ public partial class Norppa : CharacterBody2D
 
 	private void OnBodyEntered(Node body)
 	{
-		wallHit = true;
+		if (body is Player player && canAttack)
+		{
+			player.ReduceAir(2);
+			wallHit = true;
+			attackCooldownTimer.Start();
+			canAttack = false;
+			target = null;
+		}
+		else
+		{
+			wallHit = true;
+		}
 	}
 
 	private void OnBodyExited(Node body)
@@ -61,7 +83,7 @@ public partial class Norppa : CharacterBody2D
 
 	private void OnVisionEntered(Node body)
 	{
-		if (body is CharacterBody2D b && b.Name == "Player")
+		if (body is CharacterBody2D b && body is Player && canAttack)
 		{
 			target = b;
 		}
@@ -72,8 +94,6 @@ public partial class Norppa : CharacterBody2D
 		if (body is CharacterBody2D)
 		{
 			target = null;
-			// Do a 180 if player escapes
-			Rotation = (float)(Rotation - Mathf.Pi + random.NextDouble() * (Mathf.Pi / 2) - (Mathf.Pi / 4));
 		}
 	}
 }
