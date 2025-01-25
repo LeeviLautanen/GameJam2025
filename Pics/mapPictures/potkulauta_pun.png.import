@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpu8w6nq6r8h5"
-path="res://.godot/imported/potkulauta_sin.png-5d638f47170fecfe5f401a412d15bc05.ctex"
+uid="uid://bokmssajs5av3"
+path="res://.godot/imported/potkulauta_pun.png-e8e4ecbe297c2f5b546f8db02b185629.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Map/mapPictures/potkulauta_sin.png"
-dest_files=["res://.godot/imported/potkulauta_sin.png-5d638f47170fecfe5f401a412d15bc05.ctex"]
+source_file="res://Pics/mapPictures/potkulauta_pun.png"
+dest_files=["res://.godot/imported/potkulauta_pun.png-e8e4ecbe297c2f5b546f8db02b185629.ctex"]
 
 [params]
 
