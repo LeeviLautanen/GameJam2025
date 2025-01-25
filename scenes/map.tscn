@@ -1,13 +1,12 @@
-[gd_scene load_steps=12 format=4 uid="uid://b7rphhc0vi7u2"]
+[gd_scene load_steps=16 format=4 uid="uid://b7rphhc0vi7u2"]
 
 [ext_resource type="Texture2D" uid="uid://ev8ouadghnd0" path="res://Pics/mapPictures/water_tile.png" id="1_c4ghn"]
 [ext_resource type="Texture2D" uid="uid://du3wnp36d70yl" path="res://Pics/mapPictures/grass_tile.png" id="2_3ubft"]
 [ext_resource type="PackedScene" uid="uid://b7bmsoad0rq2q" path="res://scenes/player.tscn" id="3_k2ugu"]
 [ext_resource type="Texture2D" uid="uid://bokmssajs5av3" path="res://Pics/mapPictures/potkulauta_pun.png" id="4_e0ww0"]
-[ext_resource type="Script" path="res://scenes/Air_bar.gd" id="5_jloqg"]
 [ext_resource type="Texture2D" uid="uid://bpu8w6nq6r8h5" path="res://Pics/mapPictures/potkulauta_sin.png" id="4_iwlax"]
 [ext_resource type="Texture2D" uid="uid://deuibmq74qlds" path="res://Pics/mapPictures/virtaukset.png" id="5_auljj"]
-
+[ext_resource type="Script" path="res://scenes/Air_bar.gd" id="5_jloqg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ri6g3"]
 texture = ExtResource("1_c4ghn")
@@ -53,9 +52,7 @@ tile_size = Vector2i(50, 50)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ri6g3")
 sources/1 = SubResource("TileSetAtlasSource_nognk")
-
 sources/2 = SubResource("TileSetAtlasSource_wku7l")
-
 sources/3 = SubResource("TileSetAtlasSource_g5c2d")
 sources/4 = SubResource("TileSetAtlasSource_2iunj")
 
@@ -75,9 +72,6 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.0646966, 0.0646965, 0.0646965, 1)
 
-
-
-
 [node name="Map" type="Node2D"]
 
 [node name="TheMap" type="TileMapLayer" parent="."]
@@ -86,7 +80,6 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAA
 tile_set = SubResource("TileSet_e6vit")
 
 [node name="TheJunk" type="TileMapLayer" parent="."]
-
 position = Vector2(-5, -2)
 rotation = 0.00288284
 tile_map_data = PackedByteArray("AAAEAAIAAgAAAAAAAAAEAAMAAgAAAAEAAAAFAAMAAgABAAEAAAAHAAEAAwAAAAAAAAAHAAIAAwAAAAEAAAAIAAIAAwABAAEAAAADAAQABAAAAAAAAAA=")
