@@ -7,13 +7,3 @@
 
 [node name="Player" parent="." instance=ExtResource("1_4egea")]
 position = Vector2(578, 331)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-show_behind_parent = true
-light_mask = 2
-visibility_layer = 2
-position = Vector2(219, 315)
-scale = Vector2(1, 5.38281)
-texture = ExtResource("2_eetgu")

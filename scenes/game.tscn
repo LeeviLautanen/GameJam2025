@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://jsprr72sr3o2"]
+
+[ext_resource type="Script" path="res://scripts/SceneFade.cs" id="1_k5c0r"]
+[ext_resource type="Texture2D" uid="uid://b6m2qtnbvyqn8" path="res://assets/seal.png" id="2_ma3k8"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_k5c0r")
+
+[node name="Seal" type="Sprite2D" parent="."]
+position = Vector2(551, 315)
+texture = ExtResource("2_ma3k8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
