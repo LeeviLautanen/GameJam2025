@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b7bmsoad0rq2q" path="res://scenes/player.tscn" id="3_k2ugu"]
 [ext_resource type="Texture2D" uid="uid://bokmssajs5av3" path="res://Pics/mapPictures/potkulauta_pun.png" id="4_e0ww0"]
 [ext_resource type="Texture2D" uid="uid://bpu8w6nq6r8h5" path="res://Pics/mapPictures/potkulauta_sin.png" id="4_iwlax"]
-[ext_resource type="Texture2D" uid="uid://deuibmq74qlds" path="res://Pics/mapPictures/virtaukset.png" id="5_oxttr"]
+[ext_resource type="Texture2D" uid="uid://deuibmq74qlds" path="res://Pics/mapPictures/virtaukset.png" id="5_auljj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ri6g3"]
 texture = ExtResource("1_c4ghn")
@@ -38,8 +38,8 @@ texture_region_size = Vector2i(50, 50)
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, 6.01041, -2.82843, 7.77818, 8.48528, -0.707108, 20.1525, 2.82843, 25, 13.0815, 17.6777, 21.9203, 4.94975, 25, -0.35355, 15.2028, -25, 13.435)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yy33e"]
-texture = ExtResource("5_oxttr")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2iunj"]
+texture = ExtResource("5_auljj")
 texture_region_size = Vector2i(50, 50)
 0:0/0 = 0
 1:0/0 = 0
@@ -53,7 +53,7 @@ sources/0 = SubResource("TileSetAtlasSource_ri6g3")
 sources/2 = SubResource("TileSetAtlasSource_wku7l")
 sources/1 = SubResource("TileSetAtlasSource_nognk")
 sources/3 = SubResource("TileSetAtlasSource_g5c2d")
-sources/6 = SubResource("TileSetAtlasSource_yy33e")
+sources/4 = SubResource("TileSetAtlasSource_2iunj")
 
 [node name="Map" type="Node2D"]
 
@@ -65,7 +65,7 @@ tile_set = SubResource("TileSet_e6vit")
 [node name="TheJunk" type="TileMapLayer" parent="."]
 position = Vector2(-5, -2)
 rotation = 0.00288284
-tile_map_data = PackedByteArray("AAAEAAIAAgAAAAAAAAAEAAMAAgAAAAEAAAAFAAMAAgABAAEAAAAHAAEAAwAAAAAAAAAHAAIAAwAAAAEAAAAIAAIAAwABAAEAAAAEAAQABgAAAAAAAAAFAAQABgABAAAAAAAGAAYABgACAAAAAAAIAAYABgADAAAAAAA=")
+tile_map_data = PackedByteArray("AAAEAAIAAgAAAAAAAAAEAAMAAgAAAAEAAAAFAAMAAgABAAEAAAAHAAEAAwAAAAAAAAAHAAIAAwAAAAEAAAAIAAIAAwABAAEAAAADAAQABAAAAAAAAAA=")
 tile_set = SubResource("TileSet_e6vit")
 
 [node name="Player" parent="." instance=ExtResource("3_k2ugu")]
