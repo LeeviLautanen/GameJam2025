@@ -6,5 +6,8 @@
 
 [node name="Player" parent="." instance=ExtResource("1_4egea")]
 position = Vector2(578, 331)
+<<<<<<< HEAD
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+=======
+>>>>>>> 4b9c330306affb97c5ffc72634cf23352aa1cfba
