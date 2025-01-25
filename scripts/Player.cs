@@ -5,27 +5,31 @@ using System;
 public partial class Player : CharacterBody2D
 {
 	public const float Speed = 300.0f;
-<<<<<<< HEAD
-	public const float BoostMultiplier = 5.0f;
-=======
 	public const float BoostMultiplier = 2.0f;
 	private const float boostTime = 2f;
 	private const float cooldownTime = 10f;
->>>>>>> 4b9c330306affb97c5ffc72634cf23352aa1cfba
 	bool isBoosted = false;
 	bool isOnBoostCooldown = false;
-
-	private TileMapLayer tileMap;
-	private const float currentStrength = 2.0f;
-
 	private Timer boostTimer;
 	private Timer cooldownTimer;
 	private Label cooldownLabel;
 
+	private TileMapLayer tileMap;
+	private const float currentStrength = 2.0f;
+
+	private ProgressBar airBar;
+	private Timer airBarTimer;
+	private const float maxAir = 10f;
+
 	public override void _Ready()
 	{
-		// Get the TileMap node
 		tileMap = GetNode<TileMapLayer>("/root/Map/TheJunk");
+		airBar = GetNode<ProgressBar>("AirBar");
+		airBarTimer = new Timer();
+		AddChild(airBarTimer);
+		airBarTimer.WaitTime = 1f;
+		airBarTimer.Start();
+		airBarTimer.Connect("timeout", new Callable(this, "OnAirBarTimeout"));
 
 		boostTimer = new Timer();
 		AddChild(boostTimer);
@@ -81,13 +85,8 @@ public partial class Player : CharacterBody2D
 		if (Input.IsActionPressed("boost") && !isBoosted && !isOnBoostCooldown)
 		{
 			Boost();
-<<<<<<< HEAD
-			BoostCooldown();
-			} 
-=======
 			BoostCoolDown();
 		}
->>>>>>> 4b9c330306affb97c5ffc72634cf23352aa1cfba
 		//Movement
 		if (isBoosted)
 		{
@@ -116,28 +115,25 @@ public partial class Player : CharacterBody2D
 		Velocity = direction * CurrentSpeed;
 		MoveAndSlide();
 	}
-<<<<<<< HEAD
-	
-	//Starts Boost
-	private void Boost() {
-		var BoostTimer = GetNode<Timer>("BoostTimer");
-		BoostTimer.Timeout += OnBoostTimeout;
-		isBoosted = true;
+
+	public void ReduceAir(float amount)
+	{
+		airBar.Value = Math.Clamp(airBar.Value - amount, 0, maxAir);
+		if (airBar.Value == 0)
+		{
+			GetTree().ChangeSceneToFile("res://scenes/death.tscn");
+		}
 	}
-	//Ends Boost
-	private void OnBoostTimeout() {
-		isBoosted = false;
+
+	public void AddAir(float amount)
+	{
+		airBar.Value = Math.Clamp(airBar.Value + amount, 0, maxAir);
 	}
-	
-	//Starts BoostCooldown
-	private void BoostCooldown() {
-		var Cooldown = GetNode<Timer>("BoostCooldown");
-		Cooldown.Timeout += BoostCooldownTimeout;
-		isOnBoostCooldown = true;
+
+	private void OnAirBarTimeout()
+	{
+		ReduceAir(1);
 	}
-	//Ends BoostCooldown
-	private void BoostCooldownTimeout() {
-=======
 
 	// When boost is pressed call BoostTimer
 	private void Boost()
@@ -146,7 +142,7 @@ public partial class Player : CharacterBody2D
 		isBoosted = true;
 	}
 
-	//BoostTimer gives Timeout and boost ends
+	// BoostTimer gives Timeout and boost ends
 	private void OnBoostTimeout()
 	{
 		isBoosted = false;
@@ -161,7 +157,6 @@ public partial class Player : CharacterBody2D
 
 	private void OnCoolDownTimeout()
 	{
->>>>>>> 4b9c330306affb97c5ffc72634cf23352aa1cfba
 		isOnBoostCooldown = false;
 	}
 }
