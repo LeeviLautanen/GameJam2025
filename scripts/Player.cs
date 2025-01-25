@@ -4,22 +4,39 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	public const float Speed = 200.0f;
-	public const float BurstMultiplier = 2.0f;
-	private const float currentStrength = 2.0f;
+	public const float Speed = 300.0f;
+	public const float BoostMultiplier = 2.0f;
+	private const float boostTime = 2f;
+	private const float cooldownTime = 10f;
+	bool isBoosted = false;
+	bool isOnBoostCooldown = false;
+
 	private TileMapLayer tileMap;
+	private const float currentStrength = 2.0f;
+
+	private Timer boostTimer;
+	private Timer cooldownTimer;
 
 	public override void _Ready()
 	{
 		// Get the TileMap node
 		tileMap = GetNode<TileMapLayer>("/root/Map/TheJunk");
+
+		boostTimer = new Timer();
+		AddChild(boostTimer);
+		boostTimer.OneShot = true;
+		boostTimer.WaitTime = boostTime;
+		boostTimer.Connect("timeout", new Callable(this, "OnBoostTimeout"));
+
+		cooldownTimer = new Timer();
+		AddChild(cooldownTimer);
+		cooldownTimer.OneShot = true;
+		cooldownTimer.WaitTime = cooldownTime;
+		cooldownTimer.Connect("timeout", new Callable(this, "OnCoolDownTimeout"));
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
-
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-
 		// Get the tile we are on
 		Vector2I tileCoordinate = tileMap.LocalToMap(GlobalPosition);
 		Vector2I atlasIndex = tileMap.GetCellAtlasCoords(tileCoordinate);
@@ -50,14 +67,49 @@ public partial class Player : CharacterBody2D
 		}
 
 
+		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		//When "Spacebar" is pressed double speed
 		float CurrentSpeed = Speed;
-		if (Input.IsActionPressed("burst"))
+		if (Input.IsActionPressed("boost") && !isBoosted && !isOnBoostCooldown)
 		{
-			CurrentSpeed *= BurstMultiplier;
+			Boost();
+			BoostCoolDown();
 		}
-		//Making speed consistant when movin diagonally
+		//Movement
+		if (isBoosted)
+		{
+			CurrentSpeed = Speed * BoostMultiplier;
+		}
+		else
+		{
+			CurrentSpeed = Speed;
+		}
 		Velocity = direction * CurrentSpeed;
 		MoveAndSlide();
+	}
+
+	// When boost is pressed call BoostTimer
+	private void Boost()
+	{
+		boostTimer.Start();
+		isBoosted = true;
+	}
+
+	//BoostTimer gives Timeout and boost ends
+	private void OnBoostTimeout()
+	{
+		isBoosted = false;
+	}
+
+	//Sets BoostCooldown
+	private void BoostCoolDown()
+	{
+		cooldownTimer.Start();
+		isOnBoostCooldown = true;
+	}
+
+	private void OnCoolDownTimeout()
+	{
+		isOnBoostCooldown = false;
 	}
 }
