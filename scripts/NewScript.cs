@@ -7,7 +7,6 @@ public partial class NewScript : Node
 	public override void _Ready()
 	{
 		GD.Print("Hello, World!");
-		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
