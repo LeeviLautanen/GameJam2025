@@ -37,6 +37,10 @@ shape = SubResource("CapsuleShape2D_b2umw")
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -95
+limit_top = -95
+limit_right = 5145
+limit_bottom = 2795
 
 [node name="CooldownLabel" type="Label" parent="."]
 offset_left = -560.0
