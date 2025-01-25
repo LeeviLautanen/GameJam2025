@@ -1,0 +1,58 @@
+[gd_scene load_steps=12 format=3 uid="uid://bj5x41eisl3a5"]
+
+[ext_resource type="Script" path="res://scripts/StartAnimation.cs" id="1_kqcnl"]
+[ext_resource type="Texture2D" uid="uid://dvi2h4rf8r02c" path="res://Pics/AnimationFrames/start_animation_frame_1.png" id="9_j44o1"]
+[ext_resource type="Texture2D" uid="uid://6hg6ceghvcqg" path="res://Pics/AnimationFrames/start_animation_frame_2.png" id="10_xv4e0"]
+[ext_resource type="Texture2D" uid="uid://64xdr6hf6ld8" path="res://Pics/AnimationFrames/start_animation_frame_3.png" id="11_aeb3o"]
+[ext_resource type="Texture2D" uid="uid://n85westauvbh" path="res://Pics/AnimationFrames/start_animation_frame_4.png" id="12_bd5dl"]
+[ext_resource type="Texture2D" uid="uid://c82rhapeg5vla" path="res://Pics/AnimationFrames/start_animation_frame_5.png" id="13_k8ekw"]
+[ext_resource type="Texture2D" uid="uid://co4e4nlwhnlpd" path="res://Pics/AnimationFrames/start_animation_frame_6.png" id="14_5c6vu"]
+[ext_resource type="Texture2D" uid="uid://wonhjow0vqs5" path="res://Pics/AnimationFrames/start_animation_frame_7.png" id="15_v00gs"]
+[ext_resource type="Texture2D" uid="uid://dw7hdnc6f5dit" path="res://Pics/AnimationFrames/start_animation_frame_8.png" id="16_f0gjm"]
+[ext_resource type="Texture2D" uid="uid://dmsofqld0tukw" path="res://Pics/AnimationFrames/start_frame_0.png" id="17_twpo8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjxa8"]
+animations = [{
+"frames": [{
+"duration": 2.5,
+"texture": ExtResource("9_j44o1")
+}, {
+"duration": 2.5,
+"texture": ExtResource("10_xv4e0")
+}, {
+"duration": 2.5,
+"texture": ExtResource("11_aeb3o")
+}, {
+"duration": 2.5,
+"texture": ExtResource("12_bd5dl")
+}, {
+"duration": 0.5,
+"texture": ExtResource("13_k8ekw")
+}, {
+"duration": 0.5,
+"texture": ExtResource("14_5c6vu")
+}, {
+"duration": 0.5,
+"texture": ExtResource("15_v00gs")
+}, {
+"duration": 0.5,
+"texture": ExtResource("16_f0gjm")
+}, {
+"duration": 0.5,
+"texture": ExtResource("17_twpo8")
+}],
+"loop": false,
+"name": &"start_animation",
+"speed": 1.0
+}]
+
+[node name="Animation" type="Node2D"]
+script = ExtResource("1_kqcnl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(573, 332)
+scale = Vector2(0.597917, 0.613889)
+sprite_frames = SubResource("SpriteFrames_xjxa8")
+animation = &"start_animation"
+frame = 8
+frame_progress = 1.0
