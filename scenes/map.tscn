@@ -83,7 +83,7 @@ tile_set = SubResource("TileSet_e6vit")
 [node name="TheJunk" type="TileMapLayer" parent="."]
 position = Vector2(-5, -2)
 rotation = 0.00288284
-tile_map_data = PackedByteArray("AAAEAAIAAgAAAAAAAAAEAAMAAgAAAAEAAAAFAAMAAgABAAEAAAAHAAEAAwAAAAAAAAAHAAIAAwAAAAEAAAAIAAIAAwABAAEAAAADAAQABAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAEAAIAAgAAAAAAAAAEAAMAAgAAAAEAAAAFAAMAAgABAAEAAAAHAAEAAwAAAAAAAAAHAAIAAwAAAAEAAAAIAAIAAwABAAEAAAADAAQABAAAAAAAAAACAAUABAACAAAAAAA=")
 tile_set = SubResource("TileSet_e6vit")
 
 [node name="Player" parent="." instance=ExtResource("3_k2ugu")]
