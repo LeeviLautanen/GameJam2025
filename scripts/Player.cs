@@ -10,18 +10,26 @@ public partial class Player : CharacterBody2D
 	private const float cooldownTime = 10f;
 	bool isBoosted = false;
 	bool isOnBoostCooldown = false;
-
-	private TileMapLayer tileMap;
-	private const float currentStrength = 2.0f;
-
 	private Timer boostTimer;
 	private Timer cooldownTimer;
 	private Label cooldownLabel;
 
+	private TileMapLayer tileMap;
+	private const float currentStrength = 2.0f;
+
+	private ProgressBar airBar;
+	private Timer airBarTimer;
+	private const float maxAir = 10f;
+
 	public override void _Ready()
 	{
-		// Get the TileMap node
 		tileMap = GetNode<TileMapLayer>("/root/Map/TheJunk");
+		airBar = GetNode<ProgressBar>("AirBar");
+		airBarTimer = new Timer();
+		AddChild(airBarTimer);
+		airBarTimer.WaitTime = 1f;
+		airBarTimer.Start();
+		airBarTimer.Connect("timeout", new Callable(this, "OnAirBarTimeout"));
 
 		boostTimer = new Timer();
 		AddChild(boostTimer);
@@ -108,6 +116,25 @@ public partial class Player : CharacterBody2D
 		MoveAndSlide();
 	}
 
+	public void ReduceAir(float amount)
+	{
+		airBar.Value = Math.Clamp(airBar.Value - amount, 0, maxAir);
+		if (airBar.Value == 0)
+		{
+			GetTree().ChangeSceneToFile("res://scenes/death.tscn");
+		}
+	}
+
+	public void AddAir(float amount)
+	{
+		airBar.Value = Math.Clamp(airBar.Value + amount, 0, maxAir);
+	}
+
+	private void OnAirBarTimeout()
+	{
+		ReduceAir(1);
+	}
+
 	// When boost is pressed call BoostTimer
 	private void Boost()
 	{
@@ -115,7 +142,7 @@ public partial class Player : CharacterBody2D
 		isBoosted = true;
 	}
 
-	//BoostTimer gives Timeout and boost ends
+	// BoostTimer gives Timeout and boost ends
 	private void OnBoostTimeout()
 	{
 		isBoosted = false;
