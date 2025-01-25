@@ -54,6 +54,7 @@ tile_set = SubResource("TileSet_e6vit")
 
 [node name="TheJunk" type="TileMapLayer" parent="."]
 position = Vector2(-5, -2)
+rotation = 0.00288284
 tile_map_data = PackedByteArray("AAAEAAIAAgAAAAAAAAAEAAMAAgAAAAEAAAAFAAMAAgABAAEAAAAHAAEAAwAAAAAAAAAHAAIAAwAAAAEAAAAIAAIAAwABAAEAAAA=")
 tile_set = SubResource("TileSet_e6vit")
 
