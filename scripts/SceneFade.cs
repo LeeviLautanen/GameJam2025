@@ -4,25 +4,43 @@ public partial class SceneFade : CanvasLayer
 {
 	private ColorRect colorRect;
 	private Tween tween;
+	private Timer timer;
 
 	public override void _Ready()
 	{
 		colorRect = GetNode<ColorRect>("ColorRect");
-		tween = GetTree().CreateTween();
 
 		colorRect.Color = new Color(0, 0, 0, 1);
+
 		Vector2 screenSize = GetViewport().GetVisibleRect().Size;
 		colorRect.SetSize(screenSize);
-		FadeOut();
+
+		timer = new Timer();
+		AddChild(timer);
+
+		FadeFromBlack();
 	}
 
-	public void FadeOut()
+	public void FadeFromBlack()
 	{
-		tween.TweenProperty(colorRect, "modulate:a", 0, 1f);
+		tween = CreateTween();
+		tween.TweenProperty(colorRect, "modulate:a", 0f, 0.5f);
+
+		timer.Connect("timeout", new Callable(this, nameof(AfterFadeIn)));
+		timer.WaitTime = 0.5f;
+		timer.OneShot = true;
+		timer.Start();
 	}
 
-	public void FadeIn()
+	public void FadeToBlack()
 	{
-		tween.TweenProperty(colorRect, "modulate:a", 1f, 0);
+		colorRect.Visible = true;
+		Tween tween = CreateTween();
+		tween.TweenProperty(colorRect, "modulate:a", 1f, 0.5f);
+	}
+
+	private void AfterFadeIn()
+	{
+		colorRect.Visible = false;
 	}
 }

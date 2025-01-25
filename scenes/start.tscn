@@ -6,10 +6,6 @@
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_k5c0r")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="Button" type="Button" parent="."]
 offset_left = 495.0
 offset_top = 267.0
@@ -18,3 +14,7 @@ offset_bottom = 391.0
 theme_override_font_sizes/font_size = 50
 text = "Start"
 script = ExtResource("1_dy4o3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
