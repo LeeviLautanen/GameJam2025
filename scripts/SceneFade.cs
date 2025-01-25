@@ -24,10 +24,10 @@ public partial class SceneFade : CanvasLayer
 	public void FadeFromBlack()
 	{
 		tween = CreateTween();
-		tween.TweenProperty(colorRect, "modulate:a", 0f, 0.5f);
+		tween.TweenProperty(colorRect, "modulate:a", 0f, 1f);
 
 		timer.Connect("timeout", new Callable(this, nameof(AfterFadeIn)));
-		timer.WaitTime = 0.5f;
+		timer.WaitTime = 1f;
 		timer.OneShot = true;
 		timer.Start();
 	}
@@ -36,7 +36,7 @@ public partial class SceneFade : CanvasLayer
 	{
 		colorRect.Visible = true;
 		Tween tween = CreateTween();
-		tween.TweenProperty(colorRect, "modulate:a", 1f, 0.5f);
+		tween.TweenProperty(colorRect, "modulate:a", 1f, 1f);
 	}
 
 	private void AfterFadeIn()

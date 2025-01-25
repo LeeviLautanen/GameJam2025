@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://rgxppb2s1tnq"]
+[gd_scene load_steps=12 format=3 uid="uid://bj5x41eisl3a5"]
 
 [ext_resource type="Script" path="res://scripts/StartAnimation.cs" id="1_kqcnl"]
 [ext_resource type="Texture2D" uid="uid://dvi2h4rf8r02c" path="res://Pics/AnimationFrames/start_animation_frame_1.png" id="9_j44o1"]

@@ -17,12 +17,12 @@ public partial class StartButton : Button
 		parent.FadeToBlack();
 
 		timer.Connect("timeout", new Callable(this, nameof(AfterFadeOut)));
-		timer.WaitTime = 0.5f; // Fade set to 1 second in SceneFade.cs
+		timer.WaitTime = 1f; // Fade set to 1 second in SceneFade.cs
 		timer.Start();
 	}
 
 	private void AfterFadeOut()
 	{
-		GetTree().ChangeSceneToFile("res://scenes/game.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/start_cutscene.tscn");
 	}
 }
