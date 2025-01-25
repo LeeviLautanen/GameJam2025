@@ -1,9 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://csqs2as7lydw1"]
 
 [ext_resource type="PackedScene" uid="uid://b7bmsoad0rq2q" path="res://scenes/player.tscn" id="1_4egea"]
+[ext_resource type="PackedScene" uid="uid://4tjy8bvm6qq3" path="res://scenes/WinArea.tscn" id="2_yguau"]
 [ext_resource type="Texture2D" uid="uid://cvkn6cccxvd84" path="res://assets/icon.svg" id="2_eetgu"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_4egea")]
 position = Vector2(578, 331)
+
+[node name="WinArea" parent="." instance=ExtResource("2_yguau")]
+position = Vector2(280, 122)
