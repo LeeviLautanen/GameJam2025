@@ -96,7 +96,7 @@ sources/5 = SubResource("TileSetAtlasSource_4tflh")
 sources/6 = SubResource("TileSetAtlasSource_hkcr2")
 sources/7 = SubResource("TileSetAtlasSource_w5jph")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aefaj"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgcqp"]
 bg_color = Color(0.975229, 0, 0.0134395, 1)
 border_width_left = 1
 border_width_top = 1
@@ -104,7 +104,7 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhrg8"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wpod"]
 bg_color = Color(0.336054, 0.643192, 0.782503, 1)
 border_width_left = 1
 border_width_top = 1
@@ -186,20 +186,24 @@ rotation = -2.90011
 position = Vector2(2588, 2132)
 rotation = -2.85723
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-visible = false
-offset_left = 20.0
-offset_top = 8.0
-offset_right = 218.0
-offset_bottom = 35.0
-theme_override_styles/background = SubResource("StyleBoxFlat_aefaj")
-theme_override_styles/fill = SubResource("StyleBoxFlat_dhrg8")
+[node name="AirBar" type="ProgressBar" parent="UI"]
+offset_left = 14.0
+offset_top = 13.0
+offset_right = 212.0
+offset_bottom = 40.0
+theme_override_styles/background = SubResource("StyleBoxFlat_fgcqp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2wpod")
 max_value = 10.0
 value = 10.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="Timer" parent="CanvasLayer/ProgressBar"]
+[node name="CooldownLabel" type="Label" parent="UI"]
+offset_left = 16.0
+offset_top = 43.0
+offset_right = 193.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 20
+text = "Boost cooldown: 0"
