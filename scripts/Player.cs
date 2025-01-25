@@ -3,7 +3,7 @@ using System;
 
 public partial class Player : CharacterBody2D {
 	public const float Speed = 300.0f;
-	public const float BoostMultiplier = 3.0f;
+	public const float BoostMultiplier = 5.0f;
 	bool isBoosted = false;
 	bool isOnBoostCooldown = false;
 	
@@ -13,7 +13,7 @@ public partial class Player : CharacterBody2D {
 		float CurrentSpeed = Speed;
 		if (Input.IsActionPressed("boost") && !isBoosted && !isOnBoostCooldown) {
 			Boost();
-			BoostCoolDown();
+			BoostCooldown();
 			} 
 		//Movement
 		if (isBoosted) {
@@ -25,25 +25,25 @@ public partial class Player : CharacterBody2D {
 		MoveAndSlide();
 	}
 	
-	// When boost is pressed call BoostTimer
+	//Starts Boost
 	private void Boost() {
 		var BoostTimer = GetNode<Timer>("BoostTimer");
 		BoostTimer.Timeout += OnBoostTimeout;
 		isBoosted = true;
 	}
-	//BoostTimer gives Timeout and boost ends
+	//Ends Boost
 	private void OnBoostTimeout() {
 		isBoosted = false;
 	}
 	
-	//Sets BoostCooldown
-	private void BoostCoolDown() {
-		var CoolDown = GetNode<Timer>("BoostCoolDown");
-		CoolDown.Timeout += BoostCoolDownTimeout;
+	//Starts BoostCooldown
+	private void BoostCooldown() {
+		var Cooldown = GetNode<Timer>("BoostCooldown");
+		Cooldown.Timeout += BoostCooldownTimeout;
 		isOnBoostCooldown = true;
 	}
-	
-	private void BoostCoolDownTimeout() {
+	//Ends BoostCooldown
+	private void BoostCooldownTimeout() {
 		isOnBoostCooldown = false;
 	}
 	

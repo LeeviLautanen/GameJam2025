@@ -21,9 +21,8 @@ shape = SubResource("CapsuleShape2D_uw8tp")
 metadata/_edit_lock_ = true
 
 [node name="BoostTimer" type="Timer" parent="."]
-wait_time = 2.0
 autostart = true
 
-[node name="BoostCoolDown" type="Timer" parent="."]
-wait_time = 6.0
+[node name="BoostCooldown" type="Timer" parent="."]
+wait_time = 4.0
 autostart = true
