@@ -29,7 +29,7 @@ public partial class Norppa : CharacterBody2D
             Rotation = (float)(Rotation - Mathf.Pi + random.NextDouble() * (Mathf.Pi / 2) - (Mathf.Pi / 4));
         }
 
-        Vector2 direction = new Vector2(Mathf.Cos(Rotation), Mathf.Sin(Rotation));
+        Vector2 direction = new(Mathf.Cos(Rotation), Mathf.Sin(Rotation));
         Velocity = direction * Speed;
         MoveAndSlide();
     }
