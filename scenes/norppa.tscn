@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://csqs2as7lydw1"]
+[gd_scene load_steps=4 format=3 uid="uid://chlp523k67as0"]
 
 [ext_resource type="Script" path="res://scripts/Norppa.cs" id="1_4p3kq"]
 [ext_resource type="Texture2D" uid="uid://b6m2qtnbvyqn8" path="res://assets/seal.png" id="2_0qqcl"]

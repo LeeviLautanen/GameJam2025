@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj8wdhcme1tns"]
+[gd_scene load_steps=3 format=3 uid="uid://jsprr72sr3o2"]
 
 [ext_resource type="Script" path="res://scripts/SceneFade.cs" id="1_k5c0r"]
 [ext_resource type="Texture2D" uid="uid://b6m2qtnbvyqn8" path="res://assets/seal.png" id="2_ma3k8"]

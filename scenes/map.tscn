@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://b7rphhc0vi7u2"]
+[gd_scene load_steps=17 format=4 uid="uid://b7rphhc0vi7u2"]
 
 [ext_resource type="Texture2D" uid="uid://ev8ouadghnd0" path="res://Pics/mapPictures/water_tile.png" id="1_c4ghn"]
 [ext_resource type="Texture2D" uid="uid://du3wnp36d70yl" path="res://Pics/mapPictures/grass_tile.png" id="2_3ubft"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bpu8w6nq6r8h5" path="res://Pics/mapPictures/potkulauta_sin.png" id="4_iwlax"]
 [ext_resource type="Texture2D" uid="uid://deuibmq74qlds" path="res://Pics/mapPictures/virtaukset.png" id="5_auljj"]
 [ext_resource type="Script" path="res://scenes/Air_bar.gd" id="5_jloqg"]
+[ext_resource type="PackedScene" uid="uid://chlp523k67as0" path="res://scenes/norppa.tscn" id="8_oaim8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ri6g3"]
 texture = ExtResource("1_c4ghn")
@@ -103,5 +104,9 @@ show_percentage = false
 script = ExtResource("5_jloqg")
 
 [node name="Timer" type="Timer" parent="CanvasLayer/ProgressBar"]
+
+[node name="Norppa" parent="." instance=ExtResource("8_oaim8")]
+position = Vector2(-42, 238)
+rotation = -1.40948
 
 [connection signal="timeout" from="CanvasLayer/ProgressBar/Timer" to="CanvasLayer/ProgressBar" method="_on_timer_timeout"]
