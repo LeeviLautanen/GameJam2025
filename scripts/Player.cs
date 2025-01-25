@@ -16,6 +16,7 @@ public partial class Player : CharacterBody2D
 
 	private Timer boostTimer;
 	private Timer cooldownTimer;
+	private Label cooldownLabel;
 
 	public override void _Ready()
 	{
@@ -33,6 +34,9 @@ public partial class Player : CharacterBody2D
 		cooldownTimer.OneShot = true;
 		cooldownTimer.WaitTime = cooldownTime;
 		cooldownTimer.Connect("timeout", new Callable(this, "OnCoolDownTimeout"));
+
+		cooldownLabel = GetNode<Label>("CooldownLabel");
+		cooldownLabel.Set("text", "Boost Ready");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -79,11 +83,27 @@ public partial class Player : CharacterBody2D
 		if (isBoosted)
 		{
 			CurrentSpeed = Speed * BoostMultiplier;
+			cooldownLabel.Set("text", "Boost active: " + Mathf.Max(boostTimer.TimeLeft, 0).ToString("F1") + "s");
 		}
 		else
 		{
 			CurrentSpeed = Speed;
 		}
+
+		if (isBoosted)
+		{
+			CurrentSpeed = Speed * BoostMultiplier;
+			cooldownLabel.Set("text", "Boost active: " + Mathf.Max(boostTimer.TimeLeft, 0).ToString("F1") + "s");
+		}
+		else if (isOnBoostCooldown)
+		{
+			cooldownLabel.Set("text", "Boost on cooldown: " + Mathf.Max(cooldownTimer.TimeLeft, 0).ToString("F1") + "s");
+		}
+		else
+		{
+			cooldownLabel.Set("text", "Boost ready!");
+		}
+
 		Velocity = direction * CurrentSpeed;
 		MoveAndSlide();
 	}
