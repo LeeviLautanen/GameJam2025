@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7uffjc5bs8a8"
-path="res://.godot/imported/Norppa_v2.png-158e3539d0f27bc063abba90a2452cc8.ctex"
+uid="uid://du3wnp36d70yl"
+path="res://.godot/imported/grass_tile.png-7e5246f8eb75b3bb04ae3b9ffad970b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Map/mapPictures/Norppa_v2.png"
-dest_files=["res://.godot/imported/Norppa_v2.png-158e3539d0f27bc063abba90a2452cc8.ctex"]
+source_file="res://Pics/mapPictures/grass_tile.png"
+dest_files=["res://.godot/imported/grass_tile.png-7e5246f8eb75b3bb04ae3b9ffad970b1.ctex"]
 
 [params]
 
