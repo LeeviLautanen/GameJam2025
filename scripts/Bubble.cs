@@ -7,7 +7,6 @@ public partial class Bubble : Node
 	public override void _Ready()
 	{
 		bodyArea = GetNode<Area2D>("BodyArea");
-		GD.Print(bodyArea);
 		bodyArea.BodyEntered += OnBodyEntered;
 	}
 
