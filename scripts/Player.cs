@@ -25,6 +25,7 @@ public partial class Player : CharacterBody2D
 	{
 		tileMap = GetNode<TileMapLayer>("/root/Map/TheJunk");
 		airBar = GetNode<ProgressBar>("/root/Map/UI/AirBar");
+		airBar = GetNode<ProgressBar>("AirBar");
 		airBarTimer = new Timer();
 		AddChild(airBarTimer);
 		airBarTimer.WaitTime = 1f;
@@ -78,8 +79,26 @@ public partial class Player : CharacterBody2D
 				break;
 		}
 
-
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		
+		//Sprite rotation
+		if (Input.IsActionPressed("ui_right"))
+		{
+			RotationDegrees = 90;
+		}
+		else if (Input.IsActionPressed("ui_left"))
+		{
+			RotationDegrees = 270;
+		}
+		else if (Input.IsActionPressed("ui_down"))
+		{
+			RotationDegrees = 180; 
+		}
+		else if (Input.IsActionPressed("ui_up"))
+		{
+			RotationDegrees = 0;
+		}
+		
 		//When "Spacebar" is pressed double speed
 		float CurrentSpeed = Speed;
 		if (Input.IsActionPressed("boost") && !isBoosted && !isOnBoostCooldown)
@@ -91,13 +110,12 @@ public partial class Player : CharacterBody2D
 		if (isBoosted)
 		{
 			CurrentSpeed = Speed * BoostMultiplier;
-			cooldownLabel.Set("text", "Boost active: " + Mathf.Max(boostTimer.TimeLeft, 0).ToString("F1") + "s");
 		}
 		else
 		{
 			CurrentSpeed = Speed;
 		}
-
+		
 		if (isBoosted)
 		{
 			CurrentSpeed = Speed * BoostMultiplier;
@@ -123,6 +141,8 @@ public partial class Player : CharacterBody2D
 		{
 			// Has to be deferred to prevent errors
 			GetTree().CallDeferred("change_scene_to_file", "res://scenes/death_animation.tscn");
+
+			GetTree().ChangeSceneToFile("res://scenes/death.tscn");
 		}
 	}
 
@@ -136,14 +156,14 @@ public partial class Player : CharacterBody2D
 		ReduceAir(1);
 	}
 
-	// When boost is pressed call BoostTimer
+	//Boost 
 	private void Boost()
 	{
 		boostTimer.Start();
 		isBoosted = true;
 	}
 
-	// BoostTimer gives Timeout and boost ends
+	//Boost ends
 	private void OnBoostTimeout()
 	{
 		isBoosted = false;
@@ -155,7 +175,7 @@ public partial class Player : CharacterBody2D
 		cooldownTimer.Start();
 		isOnBoostCooldown = true;
 	}
-
+	//BoostCooldown ends
 	private void OnCoolDownTimeout()
 	{
 		isOnBoostCooldown = false;

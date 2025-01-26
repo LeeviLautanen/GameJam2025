@@ -9,17 +9,23 @@ radius = 15.5
 height = 42.0
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(2, 1)
 script = ExtResource("1_j5oec")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ntcg2")
+offset = Vector2(5, 0)
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4.5, 0)
 shape = SubResource("CapsuleShape2D_b2umw")
 metadata/_edit_lock_ = true
+
+[node name="BoostTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="BoostCooldown" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1, 0)
