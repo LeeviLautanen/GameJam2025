@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://chlp523k67as0" path="res://scenes/norppa.tscn" id="10_pj8wd"]
 [ext_resource type="Script" path="res://scripts/SceneFade.cs" id="12_2ghfc"]
 [ext_resource type="PackedScene" uid="uid://4tjy8bvm6qq3" path="res://scenes/WinArea.tscn" id="12_l53rn"]
-[ext_resource type="PackedScene" path="res://scenes/bubble.tscn" id="13_pnrym"]
+[ext_resource type="PackedScene" uid="uid://ctrod1oousyg0" path="res://scenes/bubble.tscn" id="13_pnrym"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gnila"]
 texture = ExtResource("1_jtcf3")
