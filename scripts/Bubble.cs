@@ -11,11 +11,6 @@ public partial class Bubble : Node
 		bodyArea.BodyEntered += OnBodyEntered;
 	}
 
-	public override void _PhysicsProcess(double delta)
-	{
-
-	}
-
 	private void OnBodyEntered(Node body)
 	{
 		GD.Print(body.Name);
