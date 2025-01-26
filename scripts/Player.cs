@@ -5,9 +5,9 @@ using System;
 public partial class Player : CharacterBody2D
 {
 	public const float Speed = 300.0f;
-	public const float BoostMultiplier = 2.0f;
-	private const float boostTime = 2f;
-	private const float cooldownTime = 10f;
+	public const float BoostMultiplier = 1.5f;
+	private const float boostTime = 0.33f;
+	private const float cooldownTime = 7f;
 	bool isBoosted = false;
 	bool isOnBoostCooldown = false;
 	private Timer boostTimer;
@@ -15,7 +15,7 @@ public partial class Player : CharacterBody2D
 	private Label cooldownLabel;
 
 	private TileMapLayer tileMap;
-	private const float currentStrength = 2.0f;
+	private const float currentStrength = 6.0f;
 
 	private ProgressBar airBar;
 	private Timer airBarTimer;
@@ -122,7 +122,7 @@ public partial class Player : CharacterBody2D
 		if (airBar.Value == 0)
 		{
 			// Has to be deferred to prevent errors
-			GetTree().CallDeferred("change_scene_to_file", "res://scenes/death.tscn");
+			GetTree().CallDeferred("change_scene_to_file", "res://scenes/death_animation.tscn");
 		}
 	}
 

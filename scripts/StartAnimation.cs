@@ -28,7 +28,7 @@ public partial class StartAnimation : Node2D
 
 	private void AfterFadeOut()
 	{
-		GetTree().ChangeSceneToFile("res://scenes/game.tscn");
+		GetTree().CallDeferred("change_scene_to_file", "res://scenes/game.tscn");
 	}
 
 }

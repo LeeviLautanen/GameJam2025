@@ -1,0 +1,97 @@
+[gd_scene load_steps=21 format=3 uid="uid://bn6th04iwtr8"]
+
+[ext_resource type="Script" path="res://scripts/EndAnimation.cs" id="1_08ju8"]
+[ext_resource type="Texture2D" uid="uid://c07g5v4xmo4wc" path="res://Pics/AnimationFrames/ending/end_animation_frame_1.png" id="1_1021s"]
+[ext_resource type="Texture2D" uid="uid://dlpr107n8tq3f" path="res://Pics/AnimationFrames/ending/end_animation_frame_2.png" id="2_dckln"]
+[ext_resource type="Texture2D" uid="uid://djy8b83aqa5qq" path="res://Pics/AnimationFrames/ending/end_animation_frame_3.png" id="3_c4s7j"]
+[ext_resource type="Texture2D" uid="uid://prwnbe80dspi" path="res://Pics/AnimationFrames/ending/end_animation_frame_4.png" id="4_fai6j"]
+[ext_resource type="Texture2D" uid="uid://c8csei6fqninj" path="res://Pics/AnimationFrames/ending/end_animation_frame_5.png" id="5_f5mtf"]
+[ext_resource type="Texture2D" uid="uid://17tuac7aqwjv" path="res://Pics/AnimationFrames/ending/end_animation_frame_6.png" id="6_p5mrh"]
+[ext_resource type="Texture2D" uid="uid://bvahrnm8psgh" path="res://Pics/AnimationFrames/ending/end_animation_frame_7.png" id="7_8cqw2"]
+[ext_resource type="Texture2D" uid="uid://bqvck0w8bs4eu" path="res://Pics/AnimationFrames/ending/end_animation_frame_8.png" id="8_ajm54"]
+[ext_resource type="Texture2D" uid="uid://cbomfy7pl7v7b" path="res://Pics/AnimationFrames/ending/end_animation_frame_9.png" id="9_3mxlv"]
+[ext_resource type="Texture2D" uid="uid://cjs5pdqgcmnpe" path="res://Pics/AnimationFrames/ending/end_animation_frame_10.png" id="10_4ndeq"]
+[ext_resource type="Texture2D" uid="uid://we1ke8kqjpyi" path="res://Pics/AnimationFrames/ending/end_animation_frame_11.png" id="11_pk2nn"]
+[ext_resource type="Texture2D" uid="uid://bmxwtltiktkln" path="res://Pics/AnimationFrames/ending/end_animation_frame_12.png" id="12_hxsjk"]
+[ext_resource type="Texture2D" uid="uid://ca3wkmxc6na2t" path="res://Pics/AnimationFrames/ending/end_animation_frame_13.png" id="13_bjiui"]
+[ext_resource type="Texture2D" uid="uid://bjguebrw3sgt3" path="res://Pics/AnimationFrames/ending/end_animation_frame_14.png" id="14_nfcdu"]
+[ext_resource type="Texture2D" uid="uid://dnlmlayyveeo4" path="res://Pics/AnimationFrames/ending/end_animation_frame_15.png" id="15_raxd7"]
+[ext_resource type="Texture2D" uid="uid://bho1uwbglf8ip" path="res://Pics/AnimationFrames/ending/end_animation_frame_16.png" id="16_4bfa8"]
+[ext_resource type="Texture2D" uid="uid://xcajxy817761" path="res://Pics/AnimationFrames/ending/end_animation_frame_17.png" id="17_wbxe6"]
+[ext_resource type="Texture2D" uid="uid://bdts8skgisli8" path="res://Pics/AnimationFrames/ending/end_animation_frame_18.png" id="18_g435s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4qgls"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("1_1021s")
+}, {
+"duration": 3.5,
+"texture": ExtResource("2_dckln")
+}, {
+"duration": 3.5,
+"texture": ExtResource("3_c4s7j")
+}, {
+"duration": 3.5,
+"texture": ExtResource("4_fai6j")
+}, {
+"duration": 1.5,
+"texture": ExtResource("5_f5mtf")
+}, {
+"duration": 1.5,
+"texture": ExtResource("6_p5mrh")
+}, {
+"duration": 1.5,
+"texture": ExtResource("7_8cqw2")
+}, {
+"duration": 1.5,
+"texture": ExtResource("8_ajm54")
+}, {
+"duration": 1.5,
+"texture": ExtResource("9_3mxlv")
+}, {
+"duration": 6.0,
+"texture": ExtResource("10_4ndeq")
+}, {
+"duration": 6.0,
+"texture": ExtResource("11_pk2nn")
+}, {
+"duration": 6.0,
+"texture": ExtResource("12_hxsjk")
+}, {
+"duration": 4.0,
+"texture": ExtResource("13_bjiui")
+}, {
+"duration": 4.0,
+"texture": ExtResource("14_nfcdu")
+}, {
+"duration": 4.0,
+"texture": ExtResource("15_raxd7")
+}, {
+"duration": 2.5,
+"texture": ExtResource("16_4bfa8")
+}, {
+"duration": 2.5,
+"texture": ExtResource("17_wbxe6")
+}, {
+"duration": 4.0,
+"texture": ExtResource("18_g435s")
+}],
+"loop": false,
+"name": &"end_animation",
+"speed": 5.0
+}]
+
+[node name="EndAnimation" type="Node2D"]
+script = ExtResource("1_08ju8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.596875, 0.599537)
+sprite_frames = SubResource("SpriteFrames_4qgls")
+animation = &"end_animation"
+autoplay = "end_animation"
+frame = 17
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
