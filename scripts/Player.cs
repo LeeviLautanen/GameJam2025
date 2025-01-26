@@ -122,7 +122,7 @@ public partial class Player : CharacterBody2D
 		if (airBar.Value == 0)
 		{
 			// Has to be deferred to prevent errors
-			GetTree().CallDeferred("change_scene_to_file", "res://scenes/death.tscn");
+			GetTree().CallDeferred("change_scene_to_file", "res://scenes/death_animation.tscn");
 		}
 	}
 
