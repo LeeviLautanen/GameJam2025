@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/WinArea.cs" id="1_4ovj6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pk8m"]
-size = Vector2(89, 75)
+size = Vector2(72, 63)
 
 [node name="WinArea" type="Node2D"]
 
@@ -11,7 +11,7 @@ size = Vector2(89, 75)
 script = ExtResource("1_4ovj6")
 
 [node name="Area" type="CollisionShape2D" parent="WinArea2D"]
-position = Vector2(238.5, 123.5)
+position = Vector2(230, 117.5)
 shape = SubResource("RectangleShape2D_4pk8m")
 
 [connection signal="body_entered" from="WinArea2D" to="WinArea2D" method="_on_body_entered"]
