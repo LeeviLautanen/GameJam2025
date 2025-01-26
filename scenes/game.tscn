@@ -128,6 +128,7 @@ script = ExtResource("1_ybe3x")
 
 [node name="GameMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_tdamc")
+volume_db = -40.0
 
 [node name="TheMap" type="TileMapLayer" parent="."]
 position = Vector2(1, 1)
