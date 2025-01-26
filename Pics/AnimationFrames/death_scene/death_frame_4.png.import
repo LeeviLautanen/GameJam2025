@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjdu87nrqmdr6"
-path="res://.godot/imported/bubble__v2_25x25px.png-73dcf0b3bb00ce318190e309c0523eb4.ctex"
+uid="uid://or4m4yusj80w"
+path="res://.godot/imported/death_frame_4.png-9b2d3ed2b08e8d60731ee389eef237ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pics/SpritePics/bubble__v2_25x25px.png"
-dest_files=["res://.godot/imported/bubble__v2_25x25px.png-73dcf0b3bb00ce318190e309c0523eb4.ctex"]
+source_file="res://Pics/AnimationFrames/death_scene/death_frame_4.png"
+dest_files=["res://.godot/imported/death_frame_4.png-9b2d3ed2b08e8d60731ee389eef237ea.ctex"]
 
 [params]
 

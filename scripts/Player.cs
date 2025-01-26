@@ -121,7 +121,8 @@ public partial class Player : CharacterBody2D
 		airBar.Value = Math.Clamp(airBar.Value - amount, 0, maxAir);
 		if (airBar.Value == 0)
 		{
-			GetTree().ChangeSceneToFile("res://scenes/death.tscn");
+			// Has to be deferred to prevent errors
+			GetTree().CallDeferred("change_scene_to_file", "res://scenes/death.tscn");
 		}
 	}
 

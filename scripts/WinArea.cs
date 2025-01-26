@@ -18,6 +18,6 @@ public partial class WinArea : Area2D
 	}
 	
 	 private void _on_body_entered(Node2D body) {
-		GetTree().CallDeferred("change_scene_to_file", "res://scenes/norppa.tscn");
+		GetTree().CallDeferred("change_scene_to_file", "res://scenes/end_animation.tscn");
 	}
 }

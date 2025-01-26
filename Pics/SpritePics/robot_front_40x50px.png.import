@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjdu87nrqmdr6"
-path="res://.godot/imported/bubble__v2_25x25px.png-73dcf0b3bb00ce318190e309c0523eb4.ctex"
+uid="uid://xffj4txlsrhb"
+path="res://.godot/imported/robot_front_40x50px.png-591d400ada579455b669b5af75f15cfa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pics/SpritePics/bubble__v2_25x25px.png"
-dest_files=["res://.godot/imported/bubble__v2_25x25px.png-73dcf0b3bb00ce318190e309c0523eb4.ctex"]
+source_file="res://Pics/SpritePics/robot_front_40x50px.png"
+dest_files=["res://.godot/imported/robot_front_40x50px.png-591d400ada579455b669b5af75f15cfa.ctex"]
 
 [params]
 
