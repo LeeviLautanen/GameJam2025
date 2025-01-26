@@ -81,8 +81,23 @@ public partial class Player : CharacterBody2D
 
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		
-		//Rotation
-		Rotation = direction.Angle();
+		//Sprite rotation
+		if (Input.IsActionPressed("ui_right"))
+		{
+			RotationDegrees = 90;
+		}
+		else if (Input.IsActionPressed("ui_left"))
+		{
+			RotationDegrees = 270;
+		}
+		else if (Input.IsActionPressed("ui_down"))
+		{
+			RotationDegrees = 180; 
+		}
+		else if (Input.IsActionPressed("ui_up"))
+		{
+			RotationDegrees = 0;
+		}
 		
 		//When "Spacebar" is pressed double speed
 		float CurrentSpeed = Speed;
