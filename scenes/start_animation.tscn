@@ -19,6 +19,38 @@
 animations = [{
 "frames": [{
 "duration": 2.5,
+"texture": ExtResource("11_1b60h")
+}, {
+"duration": 2.5,
+"texture": ExtResource("12_j0kgp")
+}, {
+"duration": 2.5,
+"texture": ExtResource("13_8g7g7")
+}, {
+"duration": 2.5,
+"texture": ExtResource("14_wvt6o")
+}, {
+"duration": 0.5,
+"texture": ExtResource("13_k8ekw")
+}, {
+"duration": 0.5,
+"texture": ExtResource("14_5c6vu")
+}, {
+"duration": 0.5,
+"texture": ExtResource("15_v00gs")
+}, {
+"duration": 0.5,
+"texture": ExtResource("16_f0gjm")
+}, {
+"duration": 0.5,
+"texture": ExtResource("17_twpo8")
+}],
+"loop": false,
+"name": &"start_animation_eng",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 2.5,
 "texture": ExtResource("9_j44o1")
 }, {
 "duration": 2.5,
@@ -46,39 +78,7 @@ animations = [{
 "texture": ExtResource("17_twpo8")
 }],
 "loop": false,
-"name": &"start_animation",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_1b60h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_j0kgp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_8g7g7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_wvt6o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_k8ekw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_5c6vu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_v00gs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_f0gjm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_twpo8")
-}],
-"loop": false,
-"name": &"start_animation_eng",
+"name": &"start_animation_fin",
 "speed": 1.0
 }]
 
@@ -90,3 +90,4 @@ position = Vector2(573, 332)
 scale = Vector2(0.597917, 0.613889)
 sprite_frames = SubResource("SpriteFrames_xjxa8")
 animation = &"start_animation_eng"
+frame_progress = 0.957958
