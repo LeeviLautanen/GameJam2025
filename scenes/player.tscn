@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7bmsoad0rq2q"]
+[gd_scene load_steps=4 format=3 uid="uid://b7bmsoad0rq2q"]
 
 [ext_resource type="Script" path="res://scripts/Player.cs" id="1_j5oec"]
 [ext_resource type="Texture2D" uid="uid://blyt2hpfe17y0" path="res://Pics/SpritePics/player_robot_39x42px.png" id="2_ntcg2"]
@@ -6,22 +6,6 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b2umw"]
 radius = 15.5
 height = 42.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5y6b"]
-bg_color = Color(0.975229, 0, 0.0134395, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtwq8"]
-bg_color = Color(0.336054, 0.643192, 0.782503, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.0646966, 0.0646965, 0.0646965, 1)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(2, 1)
@@ -41,23 +25,3 @@ limit_left = -95
 limit_top = -95
 limit_right = 5145
 limit_bottom = 2795
-
-[node name="CooldownLabel" type="Label" parent="."]
-offset_left = -560.0
-offset_top = -285.0
-offset_right = -383.0
-offset_bottom = -257.0
-theme_override_font_sizes/font_size = 20
-text = "Boost cooldown: 0"
-metadata/_edit_use_anchors_ = true
-
-[node name="AirBar" type="ProgressBar" parent="."]
-offset_left = -562.0
-offset_top = -313.0
-offset_right = -364.0
-offset_bottom = -286.0
-theme_override_styles/background = SubResource("StyleBoxFlat_c5y6b")
-theme_override_styles/fill = SubResource("StyleBoxFlat_dtwq8")
-max_value = 10.0
-value = 10.0
-show_percentage = false
