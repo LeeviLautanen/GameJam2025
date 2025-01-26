@@ -87,7 +87,7 @@ script = ExtResource("1_08ju8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(576, 324)
-scale = Vector2(0.596875, 0.599537)
+scale = Vector2(0.6, 0.599537)
 sprite_frames = SubResource("SpriteFrames_4qgls")
 animation = &"end_animation"
 autoplay = "end_animation"

@@ -18,7 +18,7 @@ public partial class StartAnimation : Node2D
 
 	private void OnAnimationFinished()
 	{
-		var parent = GetParent() as SceneFade;
+		var parent = GetNode<CanvasLayer>("../FadeLayer") as SceneFade;
 		parent.FadeToBlack();
 
 		timer.Connect("timeout", new Callable(this, nameof(AfterFadeOut)));
