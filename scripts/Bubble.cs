@@ -12,7 +12,6 @@ public partial class Bubble : Node
 
 	private void OnBodyEntered(Node body)
 	{
-		GD.Print(body.Name);
 		if (body is Player player)
 		{
 			player.AddAir(5); // Add 5 air to the player
