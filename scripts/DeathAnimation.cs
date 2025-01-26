@@ -14,7 +14,7 @@ public partial class DeathAnimation : Node2D
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
-	{
+	{	
 	}
 	
 	private void _on_animated_sprite_2d_animation_finished()

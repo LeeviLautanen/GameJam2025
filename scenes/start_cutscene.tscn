@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj1g3qmmte822"]
+[gd_scene load_steps=5 format=3 uid="uid://bx8vbnoa31j8y"]
 
 [ext_resource type="Script" path="res://scripts/SceneFade.cs" id="1_5et7n"]
 [ext_resource type="Texture2D" uid="uid://w0sekcwcsu1b" path="res://Pics/SpritePics/skip.png" id="2_j0hg0"]
-[ext_resource type="PackedScene" uid="uid://bj5x41eisl3a5" path="res://scenes/start_animation.tscn" id="2_kodgn"]
+[ext_resource type="PackedScene" uid="uid://wd8fau3jaf1h" path="res://scenes/start_animation.tscn" id="2_kodgn"]
 [ext_resource type="Script" path="res://scripts/SkipStartButton.cs" id="3_633fd"]
 
 [node name="StartCutscene" type="Node2D"]

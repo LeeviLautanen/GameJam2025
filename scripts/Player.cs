@@ -5,9 +5,9 @@ using System;
 public partial class Player : CharacterBody2D
 {
 	public const float Speed = 300.0f;
-	public const float BoostMultiplier = 2.0f;
-	private const float boostTime = 2f;
-	private const float cooldownTime = 10f;
+	public const float BoostMultiplier = 1.5f;
+	private const float boostTime = 0.33f;
+	private const float cooldownTime = 7f;
 	bool isBoosted = false;
 	bool isOnBoostCooldown = false;
 	private Timer boostTimer;

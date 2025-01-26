@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://jsprr72sr3o2"]
+[gd_scene load_steps=27 format=4 uid="uid://jsprr72sr3o2"]
 
 [ext_resource type="Texture2D" uid="uid://ev8ouadghnd0" path="res://Pics/mapPictures/water_tile.png" id="1_jtcf3"]
 [ext_resource type="Texture2D" uid="uid://du3wnp36d70yl" path="res://Pics/mapPictures/grass_tile.png" id="2_42mq7"]
@@ -11,9 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://b7bmsoad0rq2q" path="res://scenes/player.tscn" id="9_5fgo8"]
 [ext_resource type="Texture2D" uid="uid://bqb7t72e0jkuv" path="res://Pics/mapPictures/destination.png" id="9_8tngp"]
 [ext_resource type="PackedScene" uid="uid://chlp523k67as0" path="res://scenes/norppa.tscn" id="10_pj8wd"]
+[ext_resource type="Script" path="res://scripts/SceneFade.cs" id="12_2ghfc"]
 [ext_resource type="PackedScene" uid="uid://4tjy8bvm6qq3" path="res://scenes/WinArea.tscn" id="12_l53rn"]
 [ext_resource type="PackedScene" path="res://scenes/bubble.tscn" id="13_pnrym"]
-[ext_resource type="Script" path="res://scripts/SceneFade.cs" id="12_2ghfc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gnila"]
 texture = ExtResource("1_jtcf3")
