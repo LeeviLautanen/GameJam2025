@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Exit : Button
+public partial class ExitCredit : Button
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -13,8 +13,7 @@ public partial class Exit : Button
 	public override void _Process(double delta)
 	{
 	}
-	
 	private void OnStartButtonPressed() {
-		GetTree().Quit();
+		GetTree().CallDeferred("change_scene_to_file", "res://scenes/start.tscn");
 	}
 }
