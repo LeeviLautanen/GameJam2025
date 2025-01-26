@@ -78,7 +78,6 @@ public partial class Player : CharacterBody2D
 				break;
 		}
 
-
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		//When "Spacebar" is pressed double speed
 		float CurrentSpeed = Speed;
@@ -97,7 +96,8 @@ public partial class Player : CharacterBody2D
 		{
 			CurrentSpeed = Speed;
 		}
-
+		
+		
 		if (isBoosted)
 		{
 			CurrentSpeed = Speed * BoostMultiplier;
@@ -114,6 +114,9 @@ public partial class Player : CharacterBody2D
 
 		Velocity = direction * CurrentSpeed;
 		MoveAndSlide();
+		
+		
+		
 	}
 
 	public void ReduceAir(float amount)
@@ -135,14 +138,14 @@ public partial class Player : CharacterBody2D
 		ReduceAir(1);
 	}
 
-	// When boost is pressed call BoostTimer
+	//Boost 
 	private void Boost()
 	{
 		boostTimer.Start();
 		isBoosted = true;
 	}
 
-	// BoostTimer gives Timeout and boost ends
+	//Boost ends
 	private void OnBoostTimeout()
 	{
 		isBoosted = false;
@@ -154,7 +157,7 @@ public partial class Player : CharacterBody2D
 		cooldownTimer.Start();
 		isOnBoostCooldown = true;
 	}
-
+	//BoostCooldown ends
 	private void OnCoolDownTimeout()
 	{
 		isOnBoostCooldown = false;
