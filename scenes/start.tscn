@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/StartButton.cs" id="1_dy4o3"]
 [ext_resource type="Script" path="res://scripts/SceneFade.cs" id="1_k5c0r"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="FadeLayer" type="CanvasLayer"]
 script = ExtResource("1_k5c0r")
 
 [node name="Button" type="Button" parent="."]
@@ -15,6 +15,6 @@ theme_override_font_sizes/font_size = 50
 text = "Start"
 script = ExtResource("1_dy4o3")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="FadeRect" type="ColorRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0

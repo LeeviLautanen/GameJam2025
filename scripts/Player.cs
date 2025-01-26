@@ -24,7 +24,7 @@ public partial class Player : CharacterBody2D
 	public override void _Ready()
 	{
 		tileMap = GetNode<TileMapLayer>("/root/Map/TheJunk");
-		airBar = GetNode<ProgressBar>("AirBar");
+		airBar = GetNode<ProgressBar>("/root/Map/UI/AirBar");
 		airBarTimer = new Timer();
 		AddChild(airBarTimer);
 		airBarTimer.WaitTime = 1f;
@@ -43,7 +43,7 @@ public partial class Player : CharacterBody2D
 		cooldownTimer.WaitTime = cooldownTime;
 		cooldownTimer.Connect("timeout", new Callable(this, "OnCoolDownTimeout"));
 
-		cooldownLabel = GetNode<Label>("CooldownLabel");
+		cooldownLabel = GetNode<Label>("/root/Map/UI/CooldownLabel");
 		cooldownLabel.Set("text", "Boost Ready");
 	}
 
@@ -121,7 +121,8 @@ public partial class Player : CharacterBody2D
 		airBar.Value = Math.Clamp(airBar.Value - amount, 0, maxAir);
 		if (airBar.Value == 0)
 		{
-			GetTree().ChangeSceneToFile("res://scenes/death.tscn");
+			// Has to be deferred to prevent errors
+			GetTree().CallDeferred("change_scene_to_file", "res://scenes/death.tscn");
 		}
 	}
 
