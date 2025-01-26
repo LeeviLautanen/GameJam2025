@@ -25,7 +25,6 @@ public partial class Player : CharacterBody2D
 	{
 		tileMap = GetNode<TileMapLayer>("/root/Map/TheJunk");
 		airBar = GetNode<ProgressBar>("/root/Map/UI/AirBar");
-		airBar = GetNode<ProgressBar>("AirBar");
 		airBarTimer = new Timer();
 		AddChild(airBarTimer);
 		airBarTimer.WaitTime = 1f;
