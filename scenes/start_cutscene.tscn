@@ -1,13 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddldsixa7jic"]
+[gd_scene load_steps=5 format=3 uid="uid://bx8vbnoa31j8y"]
 
 [ext_resource type="Script" path="res://scripts/SceneFade.cs" id="1_5et7n"]
-[ext_resource type="PackedScene" uid="uid://bj5x41eisl3a5" path="res://scenes/start_animation.tscn" id="2_kodgn"]
+[ext_resource type="Texture2D" uid="uid://w0sekcwcsu1b" path="res://Pics/SpritePics/skip.png" id="2_j0hg0"]
+[ext_resource type="PackedScene" uid="uid://wd8fau3jaf1h" path="res://scenes/start_animation.tscn" id="2_kodgn"]
+[ext_resource type="Script" path="res://scripts/SkipStartButton.cs" id="3_633fd"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
-script = ExtResource("1_5et7n")
+[node name="StartCutscene" type="Node2D"]
 
 [node name="Animation" parent="." instance=ExtResource("2_kodgn")]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Button" type="Button" parent="."]
+offset_left = 962.0
+offset_top = 13.0
+offset_right = 1270.0
+offset_bottom = 171.0
+scale = Vector2(0.584199, 0.584199)
+icon = ExtResource("2_j0hg0")
+script = ExtResource("3_633fd")
+
+[node name="FadeLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_5et7n")
+
+[node name="FadeRect" type="ColorRect" parent="FadeLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true

@@ -8,7 +8,7 @@ public partial class SceneFade : CanvasLayer
 
 	public override void _Ready()
 	{
-		colorRect = GetNode<ColorRect>("ColorRect");
+		colorRect = GetNode<ColorRect>("FadeRect");
 
 		colorRect.Color = new Color(0, 0, 0, 1);
 

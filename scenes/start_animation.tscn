@@ -1,18 +1,54 @@
-[gd_scene load_steps=12 format=3 uid="uid://bj5x41eisl3a5"]
+[gd_scene load_steps=16 format=3 uid="uid://rgxppb2s1tnq"]
 
 [ext_resource type="Script" path="res://scripts/StartAnimation.cs" id="1_kqcnl"]
 [ext_resource type="Texture2D" uid="uid://dvi2h4rf8r02c" path="res://Pics/AnimationFrames/start_animation_frame_1.png" id="9_j44o1"]
 [ext_resource type="Texture2D" uid="uid://6hg6ceghvcqg" path="res://Pics/AnimationFrames/start_animation_frame_2.png" id="10_xv4e0"]
+[ext_resource type="Texture2D" uid="uid://bbo0ld10i27un" path="res://Pics/AnimationFrames/start_eng/start_animation_frame_1_eng.png" id="11_1b60h"]
 [ext_resource type="Texture2D" uid="uid://64xdr6hf6ld8" path="res://Pics/AnimationFrames/start_animation_frame_3.png" id="11_aeb3o"]
 [ext_resource type="Texture2D" uid="uid://n85westauvbh" path="res://Pics/AnimationFrames/start_animation_frame_4.png" id="12_bd5dl"]
+[ext_resource type="Texture2D" uid="uid://1yfkioukt0nm" path="res://Pics/AnimationFrames/start_eng/start_animation_frame_2_eng.png" id="12_j0kgp"]
+[ext_resource type="Texture2D" uid="uid://cx5cparqabfet" path="res://Pics/AnimationFrames/start_eng/start_animation_frame_3_eng.png" id="13_8g7g7"]
 [ext_resource type="Texture2D" uid="uid://c82rhapeg5vla" path="res://Pics/AnimationFrames/start_animation_frame_5.png" id="13_k8ekw"]
 [ext_resource type="Texture2D" uid="uid://co4e4nlwhnlpd" path="res://Pics/AnimationFrames/start_animation_frame_6.png" id="14_5c6vu"]
+[ext_resource type="Texture2D" uid="uid://qh0end7wt3p4" path="res://Pics/AnimationFrames/start_eng/start_animation_frame_4_eng.png" id="14_wvt6o"]
 [ext_resource type="Texture2D" uid="uid://wonhjow0vqs5" path="res://Pics/AnimationFrames/start_animation_frame_7.png" id="15_v00gs"]
 [ext_resource type="Texture2D" uid="uid://dw7hdnc6f5dit" path="res://Pics/AnimationFrames/start_animation_frame_8.png" id="16_f0gjm"]
 [ext_resource type="Texture2D" uid="uid://dmsofqld0tukw" path="res://Pics/AnimationFrames/start_frame_0.png" id="17_twpo8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xjxa8"]
 animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("11_1b60h")
+}, {
+"duration": 2.5,
+"texture": ExtResource("12_j0kgp")
+}, {
+"duration": 2.5,
+"texture": ExtResource("13_8g7g7")
+}, {
+"duration": 2.5,
+"texture": ExtResource("14_wvt6o")
+}, {
+"duration": 0.5,
+"texture": ExtResource("13_k8ekw")
+}, {
+"duration": 0.5,
+"texture": ExtResource("14_5c6vu")
+}, {
+"duration": 0.5,
+"texture": ExtResource("15_v00gs")
+}, {
+"duration": 0.5,
+"texture": ExtResource("16_f0gjm")
+}, {
+"duration": 0.5,
+"texture": ExtResource("17_twpo8")
+}],
+"loop": false,
+"name": &"start_animation_eng",
+"speed": 1.0
+}, {
 "frames": [{
 "duration": 2.5,
 "texture": ExtResource("9_j44o1")
@@ -42,7 +78,7 @@ animations = [{
 "texture": ExtResource("17_twpo8")
 }],
 "loop": false,
-"name": &"start_animation",
+"name": &"start_animation_fin",
 "speed": 1.0
 }]
 
@@ -50,9 +86,7 @@ animations = [{
 script = ExtResource("1_kqcnl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(573, 332)
-scale = Vector2(0.597917, 0.613889)
+position = Vector2(575.5, 324.25)
+scale = Vector2(0.600521, 0.599537)
 sprite_frames = SubResource("SpriteFrames_xjxa8")
-animation = &"start_animation"
-frame = 8
-frame_progress = 1.0
+animation = &"start_animation_eng"

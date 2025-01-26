@@ -2,17 +2,20 @@
 
 [ext_resource type="Script" path="res://scripts/SceneFade.cs" id="1_n58ty"]
 
-[node name="CanvasLayer2" type="CanvasLayer"]
-script = ExtResource("1_n58ty")
+[node name="DeathScene" type="Node2D"]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 238.0
-offset_top = 225.0
-offset_right = 1078.0
-offset_bottom = 498.0
-theme_override_font_sizes/font_size = 150
+offset_left = 376.0
+offset_top = 253.0
+offset_right = 823.0
+offset_bottom = 390.0
+theme_override_font_sizes/font_size = 100
 text = "You died."
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="FadeLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_n58ty")
+
+[node name="FadeRect" type="ColorRect" parent="FadeLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true

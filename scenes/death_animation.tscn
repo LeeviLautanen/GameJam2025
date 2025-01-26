@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgyfw1of20fbo"]
+[gd_scene load_steps=8 format=3 uid="uid://dsl3ddnj5mctf"]
 
+[ext_resource type="Script" path="res://scripts/DeathAnimation.cs" id="1_q3sba"]
 [ext_resource type="Texture2D" uid="uid://dhk24htwhmvw6" path="res://Pics/AnimationFrames/death_scene/death_frame_1.png" id="1_ygui3"]
 [ext_resource type="Texture2D" uid="uid://mw2lw6vt0tsg" path="res://Pics/AnimationFrames/death_scene/death_frame_2.png" id="2_fihuc"]
 [ext_resource type="Texture2D" uid="uid://dt6de16u0njku" path="res://Pics/AnimationFrames/death_scene/death_frame_3.png" id="3_ki5o1"]
@@ -21,7 +22,7 @@ animations = [{
 "duration": 1.5,
 "texture": ExtResource("4_uc01x")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_eng",
 "speed": 1.0
 }, {
@@ -38,17 +39,21 @@ animations = [{
 "duration": 1.5,
 "texture": ExtResource("4_6u0hf")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_fin",
 "speed": 1.0
 }]
 
 [node name="DeathAnimation" type="Node2D"]
+script = ExtResource("1_q3sba")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(574, 322)
-scale = Vector2(0.599479, 0.589815)
+
+
+position = Vector2(576.25, 324.25)
+scale = Vector2(0.599739, 0.599537)
 sprite_frames = SubResource("SpriteFrames_2jb3h")
 animation = &"death_eng"
-autoplay = "death_fin"
-frame_progress = 0.679767
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+
