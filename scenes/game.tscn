@@ -209,5 +209,11 @@ offset_bottom = 71.0
 theme_override_font_sizes/font_size = 20
 text = "Boost cooldown: 0"
 
-[node name="BodyArea" parent="." instance=ExtResource("11_bm8b7")]
-position = Vector2(89, 421)
+[node name="Bubble" parent="." instance=ExtResource("11_bm8b7")]
+position = Vector2(199, 278)
+
+[node name="Bubble2" parent="." instance=ExtResource("11_bm8b7")]
+position = Vector2(59, 277)
+
+[node name="Bubble3" parent="." instance=ExtResource("11_bm8b7")]
+position = Vector2(127, 279)
