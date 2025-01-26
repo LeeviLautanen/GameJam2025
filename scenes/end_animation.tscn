@@ -1,7 +1,5 @@
 [gd_scene load_steps=32 format=3 uid="uid://dqsmd8dtlymiy"]
 
-
-
 [ext_resource type="Script" path="res://scripts/EndAnimation.cs" id="1_08ju8"]
 [ext_resource type="Texture2D" uid="uid://c07g5v4xmo4wc" path="res://Pics/AnimationFrames/ending/end_animation_frame_1.png" id="1_1021s"]
 [ext_resource type="Texture2D" uid="uid://dlpr107n8tq3f" path="res://Pics/AnimationFrames/ending/end_animation_frame_2.png" id="2_dckln"]
@@ -37,17 +35,16 @@
 animations = [{
 "frames": [{
 "duration": 4.0,
-
 "texture": ExtResource("2_yw2eg")
 }, {
 "duration": 3.5,
 "texture": ExtResource("3_radok")
 }, {
 "duration": 3.5,
-"texture": ExtResource("4_243ey")
+"texture": ExtResource("5_kxfpw")
 }, {
 "duration": 3.5,
-"texture": ExtResource("5_kxfpw")
+"texture": ExtResource("4_243ey")
 }, {
 "duration": 1.5,
 "texture": ExtResource("5_f5mtf")
@@ -97,8 +94,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 3.0,
-
-
 "texture": ExtResource("1_1021s")
 }, {
 "duration": 3.5,
