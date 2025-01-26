@@ -8,7 +8,7 @@ public partial class StartAnimation : Node2D
 	public override void _Ready()
 	{
 		animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-		animatedSprite2D.Play("start_animation");
+		animatedSprite2D.Play("start_animation_eng");
 		animatedSprite2D.AnimationFinished += OnAnimationFinished;
 
 		timer = new Timer();
