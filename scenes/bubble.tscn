@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctrod1oousyg0"]
+[gd_scene load_steps=5 format=3 uid="uid://ctrod1oousyg0"]
 
 [ext_resource type="Script" path="res://scripts/Bubble.cs" id="1_spyah"]
 [ext_resource type="Texture2D" uid="uid://cjdu87nrqmdr6" path="res://Pics/SpritePics/bubble__v2_25x25px.png" id="2_pgagt"]
+[ext_resource type="AudioStream" uid="uid://v7b1uh2v8sh2" path="res://audio/mixkit-liquid-bubble-3000.wav" id="3_iu2w3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l8qmc"]
 radius = 13.0384
@@ -16,3 +17,6 @@ shape = SubResource("CircleShape2D_l8qmc")
 
 [node name="Sprite2D" type="Sprite2D" parent="BodyArea"]
 texture = ExtResource("2_pgagt")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_iu2w3")
