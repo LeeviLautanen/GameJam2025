@@ -15,7 +15,7 @@ public partial class Player : CharacterBody2D
 	private Label cooldownLabel;
 
 	private TileMapLayer tileMap;
-	private const float currentStrength = 2.0f;
+	private const float currentStrength = 6.0f;
 
 	private ProgressBar airBar;
 	private Timer airBarTimer;
