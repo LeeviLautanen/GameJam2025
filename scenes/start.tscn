@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddqls5rk5qwvv"]
+[gd_scene load_steps=9 format=3 uid="uid://ddqls5rk5qwvv"]
 
 [ext_resource type="Script" path="res://scripts/StartButton.cs" id="1_dy4o3"]
 [ext_resource type="Script" path="res://scripts/SceneFade.cs" id="1_k5c0r"]
 [ext_resource type="Texture2D" uid="uid://dehch2s4j4cjf" path="res://Pics/CutScenes/valikko_kuva.png" id="2_t7gap"]
 [ext_resource type="Texture2D" uid="uid://bri7rg3xmvbaa" path="res://Pics/CutScenes/start_300x150px.png" id="3_lfdwv"]
+[ext_resource type="Texture2D" uid="uid://cky8ybygy4hoq" path="res://Pics/CutScenes/Credits_300x150px.png" id="5_vd3ve"]
+[ext_resource type="Script" path="res://scripts/Credits.cs" id="6_lc2kx"]
+[ext_resource type="Texture2D" uid="uid://c2fnjvfintnsl" path="res://Pics/CutScenes/exit_300x150px.png" id="7_uvayh"]
+[ext_resource type="Script" path="res://scripts/Exit.cs" id="8_u2qm8"]
 
 [node name="FadeLayer" type="CanvasLayer"]
 script = ExtResource("1_k5c0r")
@@ -23,6 +27,20 @@ theme_override_font_sizes/font_size = 50
 icon = ExtResource("3_lfdwv")
 script = ExtResource("1_dy4o3")
 
-[node name="FadeRect" type="ColorRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Button2" type="Button" parent="."]
+offset_left = 937.0
+offset_top = 430.0
+offset_right = 1245.0
+offset_bottom = 588.0
+scale = Vector2(0.6, 0.6)
+icon = ExtResource("5_vd3ve")
+script = ExtResource("6_lc2kx")
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 940.0
+offset_top = 531.0
+offset_right = 1248.0
+offset_bottom = 689.0
+scale = Vector2(0.6, 0.6)
+icon = ExtResource("7_uvayh")
+script = ExtResource("8_u2qm8")
