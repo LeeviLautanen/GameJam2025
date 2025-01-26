@@ -1,28 +1,35 @@
 [gd_scene load_steps=4 format=3 uid="uid://chlp523k67as0"]
 
 [ext_resource type="Script" path="res://scripts/Norppa.cs" id="1_4p3kq"]
-[ext_resource type="Texture2D" uid="uid://b6m2qtnbvyqn8" path="res://assets/seal.png" id="2_0qqcl"]
+[ext_resource type="Texture2D" uid="uid://dcsrix6ac1nl" path="res://Pics/SpritePics/Norppa_v2.png" id="2_d6gej"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xwb3"]
-size = Vector2(51, 20)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2j0ij"]
+radius = 6.63793
+height = 50.8648
 
 [node name="Norppa" type="CharacterBody2D"]
 script = ExtResource("1_4p3kq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.248227, 0.212766)
-texture = ExtResource("2_0qqcl")
+position = Vector2(0, 1)
+scale = Vector2(0.928562, 0.798563)
+texture = ExtResource("2_d6gej")
+flip_h = true
 
 [node name="VisionArea" type="Area2D" parent="."]
-position = Vector2(-3, -33)
+position = Vector2(14, -35)
 
 [node name="VisionCollider" type="CollisionPolygon2D" parent="VisionArea"]
 position = Vector2(32, 34)
 scale = Vector2(0.698864, 0.514881)
-polygon = PackedVector2Array(0, 0, 538.016, 190.335, 539.447, -242.775)
+polygon = PackedVector2Array(0, 0, 538.016, 231.121, 539.447, -242.775)
 
 [node name="BodyArea" type="Area2D" parent="."]
+position = Vector2(3, 0)
+scale = Vector2(1.5728, 1.65714)
 
 [node name="BodyCollider" type="CollisionShape2D" parent="BodyArea"]
-position = Vector2(5.5, 0)
-shape = SubResource("RectangleShape2D_8xwb3")
+position = Vector2(1.90743, -0.603448)
+rotation = 1.57079
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_2j0ij")
