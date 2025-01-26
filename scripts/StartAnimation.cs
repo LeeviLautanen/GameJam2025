@@ -8,7 +8,7 @@ public partial class StartAnimation : Node2D
 	public override void _Ready()
 	{
 		animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-		animatedSprite2D.Play("start_animation");
+		animatedSprite2D.Play("start_animation_eng");
 		animatedSprite2D.AnimationFinished += OnAnimationFinished;
 
 		timer = new Timer();
@@ -18,7 +18,7 @@ public partial class StartAnimation : Node2D
 
 	private void OnAnimationFinished()
 	{
-		var parent = GetParent() as SceneFade;
+		var parent = GetNode<CanvasLayer>("../FadeLayer") as SceneFade;
 		parent.FadeToBlack();
 
 		timer.Connect("timeout", new Callable(this, nameof(AfterFadeOut)));
@@ -28,7 +28,7 @@ public partial class StartAnimation : Node2D
 
 	private void AfterFadeOut()
 	{
-		GetTree().ChangeSceneToFile("res://scenes/game.tscn");
+		GetTree().CallDeferred("change_scene_to_file", "res://scenes/game.tscn");
 	}
 
 }
