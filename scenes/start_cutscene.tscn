@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj1g3qmmte822"]
+
+[ext_resource type="Script" path="res://scripts/SceneFade.cs" id="1_5et7n"]
+[ext_resource type="PackedScene" uid="uid://bj5x41eisl3a5" path="res://scenes/start_animation.tscn" id="2_kodgn"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_5et7n")
+
+[node name="Animation" parent="." instance=ExtResource("2_kodgn")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

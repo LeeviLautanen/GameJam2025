@@ -1,0 +1,101 @@
+[gd_scene load_steps=9 format=3 uid="uid://428rcfeerska"]
+
+[ext_resource type="Script" path="res://NewScript.cs" id="1_wbcdy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6f5mk"]
+bg_color = Color(1, 0.00602727, 0.275673, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuxnb"]
+bg_color = Color(0.161325, 0.513217, 0.614666, 1)
+
+[sub_resource type="GDScript" id="GDScript_aql0x"]
+script/source = "extends Sprite2D
+
+@onready var air_bar = $HealthBar
+@onready var timer: Timer = $HealthBar/Timer
+
+const MAX_AIR = 10
+var air = MAX_AIR
+var time = 10 #seconds after this player dies
+
+func _ready():
+	air_bar.value = air
+	timer.start()
+
+#timer to count down the air
+func _on_timer_timeout():
+	air -= 1 #time seconds
+	air_bar.value = air
+	if air <= 0:
+		print(\"You got an electric shock\")
+		timer.stop()
+		#game over, redirect to start scene
+	
+	
+#replace the button with 'negative' object to decrease air
+func _on_subs_button_pressed() -> void:
+	air -= 2 #time seconds
+	air_bar.value = air
+	if air <= 0:
+		print(\"You got an electric shock\")
+		timer.stop()
+		#game over, redirect to start scene
+
+
+#replace the button with airbubble object
+func _on_add_button_pressed() -> void:
+	air += 2 #seconds
+	air_bar.value = air
+	if air > 10:
+		air = MAX_AIR
+"
+
+[sub_resource type="Theme" id="Theme_nikaj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eei4c"]
+bg_color = Color(0.297691, 0.639874, 0.832912, 1)
+
+[sub_resource type="Theme" id="Theme_e1f8q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ynn4"]
+bg_color = Color(1, 0.157016, 0.0262209, 1)
+
+[node name="HealthScene" type="Node2D"]
+position = Vector2(576, 275)
+script = ExtResource("1_wbcdy")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -553.0
+offset_top = -259.0
+offset_right = -313.0
+offset_bottom = -232.0
+theme_override_styles/background = SubResource("StyleBoxFlat_6f5mk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kuxnb")
+max_value = 10.0
+value = 10.0
+show_percentage = false
+script = SubResource("GDScript_aql0x")
+metadata/_edit_use_anchors_ = true
+
+[node name="AddButton" type="Button" parent="HealthBar"]
+layout_mode = 0
+offset_left = 375.0
+offset_right = 491.0
+offset_bottom = 47.0
+theme = SubResource("Theme_nikaj")
+theme_type_variation = &"FlatButton"
+theme_override_styles/normal = SubResource("StyleBoxFlat_eei4c")
+text = "Add air"
+
+[node name="SubsButton" type="Button" parent="HealthBar"]
+layout_mode = 0
+offset_left = 564.0
+offset_top = -5.0
+offset_right = 688.0
+offset_bottom = 47.0
+theme = SubResource("Theme_e1f8q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5ynn4")
+text = "remove air
+"
+
+[node name="Timer" type="Timer" parent="HealthBar"]
