@@ -80,6 +80,10 @@ public partial class Player : CharacterBody2D
 		}
 
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		
+		//Rotation
+		Rotation = direction.Angle();
+		
 		//When "Spacebar" is pressed double speed
 		float CurrentSpeed = Speed;
 		if (Input.IsActionPressed("boost") && !isBoosted && !isOnBoostCooldown)
@@ -91,13 +95,11 @@ public partial class Player : CharacterBody2D
 		if (isBoosted)
 		{
 			CurrentSpeed = Speed * BoostMultiplier;
-			cooldownLabel.Set("text", "Boost active: " + Mathf.Max(boostTimer.TimeLeft, 0).ToString("F1") + "s");
 		}
 		else
 		{
 			CurrentSpeed = Speed;
 		}
-		
 		
 		if (isBoosted)
 		{
@@ -115,9 +117,6 @@ public partial class Player : CharacterBody2D
 
 		Velocity = direction * CurrentSpeed;
 		MoveAndSlide();
-		
-		
-		
 	}
 
 	public void ReduceAir(float amount)
@@ -134,27 +133,11 @@ public partial class Player : CharacterBody2D
 		airBar.Value = Math.Clamp(airBar.Value + amount, 0, maxAir);
 	}
 
-	public void ReduceAir(float amount)
-	{
-		airBar.Value = Math.Clamp(airBar.Value - amount, 0, maxAir);
-		if (airBar.Value == 0)
-		{
-			// Has to be deferred to prevent errors
-			GetTree().CallDeferred("change_scene_to_file", "res://scenes/death.tscn");
-		}
-	}
-
-	public void AddAir(float amount)
-	{
-		airBar.Value = Math.Clamp(airBar.Value + amount, 0, maxAir);
-	}
-
 	private void OnAirBarTimeout()
 	{
 		ReduceAir(1);
 	}
 
-	// When boost is pressed call BoostTimer
 	//Boost 
 	private void Boost()
 	{
@@ -162,8 +145,6 @@ public partial class Player : CharacterBody2D
 		isBoosted = true;
 	}
 
-
-	// BoostTimer gives Timeout and boost ends
 	//Boost ends
 	private void OnBoostTimeout()
 	{

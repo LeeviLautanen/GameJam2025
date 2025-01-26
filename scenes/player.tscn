@@ -26,6 +26,7 @@ autostart = true
 [node name="BoostCooldown" type="Timer" parent="."]
 wait_time = 4.0
 autostart = true
+
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = -95
 limit_top = -95
