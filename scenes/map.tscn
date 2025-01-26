@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://b7rphhc0vi7u2"]
+[gd_scene load_steps=23 format=4 uid="uid://ciqyy43y4icd4"]
 
 [ext_resource type="Texture2D" uid="uid://ev8ouadghnd0" path="res://Pics/mapPictures/water_tile.png" id="1_c4ghn"]
 [ext_resource type="Texture2D" uid="uid://du3wnp36d70yl" path="res://Pics/mapPictures/grass_tile.png" id="2_3ubft"]
@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://d00jp3ksohslt" path="res://Pics/mapPictures/vene.png" id="6_wuen1"]
 [ext_resource type="Texture2D" uid="uid://dr0jii5kqpc34" path="res://Pics/mapPictures/kivi.png" id="7_ytt6v"]
 [ext_resource type="Texture2D" uid="uid://c0ofceurxk7oy" path="res://Pics/mapPictures/oksa.png" id="8_fef6v"]
-[ext_resource type="PackedScene" uid="uid://chlp523k67as0" path="res://scenes/norppa.tscn" id="8_oaim8"]
-[ext_resource type="PackedScene" path="res://scenes/bubble.tscn" id="11_ylbmg"]
+[ext_resource type="PackedScene" uid="uid://bls5uxscakyv" path="res://scenes/norppa.tscn" id="8_oaim8"]
+[ext_resource type="PackedScene" uid="uid://cbc8yf6b2i472" path="res://scenes/bubble.tscn" id="11_ylbmg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1dmr3"]
 texture = ExtResource("1_c4ghn")
@@ -211,4 +211,4 @@ text = "Boost cooldown: 0"
 metadata/_edit_use_anchors_ = true
 
 [node name="Bubble" parent="." instance=ExtResource("11_ylbmg")]
-position = Vector2(70, 391)
+position = Vector2(544, 375)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/SceneFade.cs" id="1_n58ty"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer2" type="CanvasLayer"]
 script = ExtResource("1_n58ty")
 
 [node name="Label" type="Label" parent="."]
