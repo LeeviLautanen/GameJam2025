@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddqls5rk5qwvv"]
+[gd_scene load_steps=3 format=3 uid="uid://dp3tv1ji8kxxe"]
 
 [ext_resource type="Script" path="res://scripts/StartButton.cs" id="1_dy4o3"]
 [ext_resource type="Script" path="res://scripts/SceneFade.cs" id="1_k5c0r"]
