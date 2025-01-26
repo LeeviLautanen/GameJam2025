@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://jsprr72sr3o2"]
+[gd_scene load_steps=28 format=4 uid="uid://dbbtnn2swv6j5"]
 
 [ext_resource type="Texture2D" uid="uid://ev8ouadghnd0" path="res://Pics/mapPictures/water_tile.png" id="1_jtcf3"]
 [ext_resource type="Script" path="res://scripts/MapMusic.cs" id="1_ybe3x"]
@@ -11,10 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://c0ofceurxk7oy" path="res://Pics/mapPictures/oksa.png" id="8_jtl7y"]
 [ext_resource type="PackedScene" uid="uid://b7bmsoad0rq2q" path="res://scenes/player.tscn" id="9_5fgo8"]
 [ext_resource type="Texture2D" uid="uid://bqb7t72e0jkuv" path="res://Pics/mapPictures/destination.png" id="9_8tngp"]
-[ext_resource type="PackedScene" uid="uid://chlp523k67as0" path="res://scenes/norppa.tscn" id="10_pj8wd"]
-[ext_resource type="Script" path="res://scripts/SceneFade.cs" id="12_2ghfc"]
-[ext_resource type="PackedScene" uid="uid://4tjy8bvm6qq3" path="res://scenes/WinArea.tscn" id="12_l53rn"]
-[ext_resource type="PackedScene" path="res://scenes/bubble.tscn" id="13_pnrym"]
+[ext_resource type="PackedScene" uid="uid://bls5uxscakyv" path="res://scenes/norppa.tscn" id="10_pj8wd"]
+[ext_resource type="PackedScene" path="res://scenes/WinArea.tscn" id="12_l53rn"]
+[ext_resource type="PackedScene" uid="uid://cbc8yf6b2i472" path="res://scenes/bubble.tscn" id="13_pnrym"]
+[ext_resource type="AudioStream" uid="uid://d1ynjgv4qfntp" path="res://audio/Sakura-Girl-Daisy-chosic.com_.mp3" id="15_tdamc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gnila"]
 texture = ExtResource("1_jtcf3")
@@ -126,7 +126,7 @@ border_color = Color(0.0646966, 0.0646965, 0.0646965, 1)
 [node name="Map" type="Node2D"]
 script = ExtResource("1_ybe3x")
 
-[node name="GameMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="GameMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_tdamc")
 volume_db = -40.0
 
@@ -286,11 +286,3 @@ position = Vector2(2568, 2628)
 
 [node name="Bubble20" parent="." instance=ExtResource("13_pnrym")]
 position = Vector2(2174, 1115)
-
-[node name="FadeLayer" type="CanvasLayer" parent="."]
-script = ExtResource("12_2ghfc")
-
-[node name="FadeRect" type="ColorRect" parent="FadeLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-metadata/_edit_use_anchors_ = true
