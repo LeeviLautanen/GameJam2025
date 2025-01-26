@@ -48,9 +48,12 @@ animations = [{
 script = ExtResource("1_q3sba")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(574, 322)
-scale = Vector2(0.599479, 0.589815)
+
+
+position = Vector2(576.25, 324.25)
+scale = Vector2(0.599739, 0.599537)
 sprite_frames = SubResource("SpriteFrames_2jb3h")
 animation = &"death_eng"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+
