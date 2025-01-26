@@ -44,3 +44,7 @@ offset_bottom = 689.0
 scale = Vector2(0.6, 0.6)
 icon = ExtResource("7_uvayh")
 script = ExtResource("8_u2qm8")
+
+[node name="FadeRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

@@ -1,5 +1,6 @@
-[gd_scene load_steps=27 format=4 uid="uid://jsprr72sr3o2"]
+[gd_scene load_steps=29 format=4 uid="uid://jsprr72sr3o2"]
 
+[ext_resource type="Script" path="res://scenes/MapMusic.cs" id="1_0lor7"]
 [ext_resource type="Texture2D" uid="uid://ev8ouadghnd0" path="res://Pics/mapPictures/water_tile.png" id="1_jtcf3"]
 [ext_resource type="Texture2D" uid="uid://du3wnp36d70yl" path="res://Pics/mapPictures/grass_tile.png" id="2_42mq7"]
 [ext_resource type="Texture2D" uid="uid://bokmssajs5av3" path="res://Pics/mapPictures/potkulauta_pun.png" id="3_yk0yp"]
@@ -14,6 +15,7 @@
 [ext_resource type="Script" path="res://scripts/SceneFade.cs" id="12_2ghfc"]
 [ext_resource type="PackedScene" uid="uid://4tjy8bvm6qq3" path="res://scenes/WinArea.tscn" id="12_l53rn"]
 [ext_resource type="PackedScene" uid="uid://ctrod1oousyg0" path="res://scenes/bubble.tscn" id="13_pnrym"]
+[ext_resource type="AudioStream" uid="uid://1s742xoie25q" path="res://audio/Sakura-Girl-Daisy-chosic.com_.mp3" id="16_ep4w2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gnila"]
 texture = ExtResource("1_jtcf3")
@@ -123,6 +125,7 @@ border_width_bottom = 1
 border_color = Color(0.0646966, 0.0646965, 0.0646965, 1)
 
 [node name="Map" type="Node2D"]
+script = ExtResource("1_0lor7")
 
 [node name="TheMap" type="TileMapLayer" parent="."]
 position = Vector2(1, 1)
@@ -288,3 +291,7 @@ script = ExtResource("12_2ghfc")
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_ep4w2")
+volume_db = -40.0

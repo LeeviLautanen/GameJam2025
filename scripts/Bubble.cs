@@ -12,10 +12,19 @@ public partial class Bubble : Node
 
 	private void OnBodyEntered(Node body)
 	{
+		var audioAirBubble = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
+		audioAirBubble.Stream = GD.Load<AudioStream>("res://audio/mixkit-liquid-bubble-3000.wav");
+  		audioAirBubble.Play();
+		
 		if (body is Player player)
 		{
 			player.AddAir(5); // Add 5 air to the player
-			QueueFree(); // Destroy the bubble
+			
+			GetTree().CreateTimer(0.15).Timeout += () =>
+		{
+			QueueFree();
+		
+		};
 		}
 	}
 }
