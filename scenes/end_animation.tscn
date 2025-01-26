@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bl8aqjt54d4jg"]
+[gd_scene load_steps=21 format=3 uid="uid://bn6th04iwtr8"]
 
 [ext_resource type="Script" path="res://scripts/EndAnimation.cs" id="1_08ju8"]
 [ext_resource type="Texture2D" uid="uid://c07g5v4xmo4wc" path="res://Pics/AnimationFrames/ending/end_animation_frame_1.png" id="1_1021s"]
@@ -23,16 +23,16 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_4qgls"]
 animations = [{
 "frames": [{
-"duration": 3.0,
+"duration": 4.0,
 "texture": ExtResource("1_1021s")
 }, {
-"duration": 3.0,
+"duration": 3.5,
 "texture": ExtResource("2_dckln")
 }, {
-"duration": 3.0,
+"duration": 3.5,
 "texture": ExtResource("3_c4s7j")
 }, {
-"duration": 3.0,
+"duration": 3.5,
 "texture": ExtResource("4_fai6j")
 }, {
 "duration": 1.5,
@@ -50,31 +50,31 @@ animations = [{
 "duration": 1.5,
 "texture": ExtResource("9_3mxlv")
 }, {
-"duration": 3.0,
+"duration": 6.0,
 "texture": ExtResource("10_4ndeq")
 }, {
-"duration": 3.0,
+"duration": 6.0,
 "texture": ExtResource("11_pk2nn")
 }, {
-"duration": 3.0,
+"duration": 6.0,
 "texture": ExtResource("12_hxsjk")
 }, {
-"duration": 3.0,
+"duration": 4.0,
 "texture": ExtResource("13_bjiui")
 }, {
-"duration": 3.0,
+"duration": 4.0,
 "texture": ExtResource("14_nfcdu")
 }, {
-"duration": 3.0,
+"duration": 4.0,
 "texture": ExtResource("15_raxd7")
 }, {
-"duration": 1.5,
+"duration": 2.5,
 "texture": ExtResource("16_4bfa8")
 }, {
-"duration": 1.5,
+"duration": 2.5,
 "texture": ExtResource("17_wbxe6")
 }, {
-"duration": 3.0,
+"duration": 4.0,
 "texture": ExtResource("18_g435s")
 }],
 "loop": false,
@@ -93,3 +93,5 @@ animation = &"end_animation"
 autoplay = "end_animation"
 frame = 17
 frame_progress = 1.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
