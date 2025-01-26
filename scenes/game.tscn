@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://jsprr72sr3o2"]
+[gd_scene load_steps=24 format=4 uid="uid://jsprr72sr3o2"]
 
 [ext_resource type="Texture2D" uid="uid://ev8ouadghnd0" path="res://Pics/mapPictures/water_tile.png" id="1_jtcf3"]
 [ext_resource type="Texture2D" uid="uid://du3wnp36d70yl" path="res://Pics/mapPictures/grass_tile.png" id="2_42mq7"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b7bmsoad0rq2q" path="res://scenes/player.tscn" id="9_5fgo8"]
 [ext_resource type="PackedScene" uid="uid://chlp523k67as0" path="res://scenes/norppa.tscn" id="10_pj8wd"]
 [ext_resource type="PackedScene" uid="uid://ctrod1oousyg0" path="res://scenes/bubble.tscn" id="11_bm8b7"]
+[ext_resource type="Script" path="res://scripts/SceneFade.cs" id="12_2ghfc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gnila"]
 texture = ExtResource("1_jtcf3")
@@ -217,3 +218,11 @@ position = Vector2(59, 277)
 
 [node name="Bubble3" parent="." instance=ExtResource("11_bm8b7")]
 position = Vector2(127, 279)
+
+[node name="FadeLayer" type="CanvasLayer" parent="."]
+script = ExtResource("12_2ghfc")
+
+[node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
